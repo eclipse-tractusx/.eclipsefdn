@@ -337,6 +337,11 @@ orgs.newOrg('eclipse-tractusx') {
         secret_scanning_push_protection: "disabled",
         web_commit_signoff_required: false,
       },
+      orgs.newRepo('ssi-docu') {
+        allow_update_branch: false,
+        secret_scanning_push_protection: "disabled",
+        web_commit_signoff_required: false,
+      },
       orgs.newRepo('testdata-provider') {
         allow_update_branch: false,
         description: "Testdata Provider",
