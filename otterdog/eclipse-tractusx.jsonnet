@@ -381,6 +381,8 @@ orgs.newOrg('eclipse-tractusx') {
         secret_scanning_push_protection: "disabled",
         web_commit_signoff_required: false,
       },
+      orgs.newRepo('test-repo') {
+      },
       orgs.newRepo('tractusx-quality-checks') {
         allow_update_branch: false,
         secret_scanning_push_protection: "disabled",
