@@ -113,7 +113,7 @@ orgs.newOrg('eclipse-tractusx') {
         branch_protection_rules: [
           orgs.newBranchProtectionRule('main') {
             required_approving_review_count: 1,
-            required_status_checks: [],
+            required_status_checks+: [],
             requires_status_checks: false,
             requires_strict_status_checks: true,
           },
