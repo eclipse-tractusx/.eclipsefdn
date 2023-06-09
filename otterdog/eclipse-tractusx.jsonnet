@@ -14,7 +14,9 @@ orgs.newOrg('eclipse-tractusx') {
       packages_containers_internal: false,
       packages_containers_public: false,
       readers_can_create_discussions: true,
-      security_managers: [],
+      security_managers+: [
+        "automotive-tractusx-committers"
+      ],
       web_commit_signoff_required: false,
     },
     _repositories+:: [
