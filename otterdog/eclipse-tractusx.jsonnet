@@ -105,7 +105,6 @@ orgs.newOrg('eclipse-tractusx') {
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
-          required_status_checks: [],
           requires_status_checks: false,
           requires_strict_status_checks: true,
         },
@@ -171,7 +170,6 @@ orgs.newOrg('eclipse-tractusx') {
         orgs.newBranchProtectionRule('main') {
           dismisses_stale_reviews: true,
           required_approving_review_count: 1,
-          required_status_checks: [],
           requires_status_checks: false,
           requires_strict_status_checks: true,
         },
@@ -187,14 +185,12 @@ orgs.newOrg('eclipse-tractusx') {
         orgs.newBranchProtectionRule('dev') {
           dismisses_stale_reviews: true,
           required_approving_review_count: 1,
-          required_status_checks: [],
           requires_status_checks: false,
           requires_strict_status_checks: true,
         },
         orgs.newBranchProtectionRule('main') {
           dismisses_stale_reviews: true,
           required_approving_review_count: 1,
-          required_status_checks: [],
           requires_status_checks: false,
           requires_strict_status_checks: true,
         },
@@ -210,7 +206,6 @@ orgs.newOrg('eclipse-tractusx') {
       branch_protection_rules: [
         orgs.newBranchProtectionRule('dev') {
           required_approving_review_count: null,
-          required_status_checks: [],
           requires_approving_reviews: false,
           requires_status_checks: false,
           requires_strict_status_checks: true,
@@ -218,7 +213,6 @@ orgs.newOrg('eclipse-tractusx') {
         orgs.newBranchProtectionRule('main') {
           dismisses_stale_reviews: true,
           required_approving_review_count: 1,
-          required_status_checks: [],
           requires_status_checks: false,
           requires_strict_status_checks: true,
         },
@@ -234,14 +228,12 @@ orgs.newOrg('eclipse-tractusx') {
         orgs.newBranchProtectionRule('dev') {
           dismisses_stale_reviews: true,
           required_approving_review_count: 1,
-          required_status_checks: [],
           requires_status_checks: false,
           requires_strict_status_checks: true,
         },
         orgs.newBranchProtectionRule('main') {
           dismisses_stale_reviews: true,
           required_approving_review_count: 1,
-          required_status_checks: [],
           requires_status_checks: false,
           requires_strict_status_checks: true,
         },
@@ -257,14 +249,12 @@ orgs.newOrg('eclipse-tractusx') {
         orgs.newBranchProtectionRule('dev') {
           dismisses_stale_reviews: true,
           required_approving_review_count: 1,
-          required_status_checks: [],
           requires_status_checks: false,
           requires_strict_status_checks: true,
         },
         orgs.newBranchProtectionRule('main') {
           dismisses_stale_reviews: true,
           required_approving_review_count: 1,
-          required_status_checks: [],
           requires_status_checks: false,
           requires_strict_status_checks: true,
         },
@@ -348,7 +338,6 @@ orgs.newOrg('eclipse-tractusx') {
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
-          required_status_checks: [],
           requires_status_checks: false,
           requires_strict_status_checks: true,
         },
@@ -362,7 +351,6 @@ orgs.newOrg('eclipse-tractusx') {
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
-          required_status_checks: [],
           requires_status_checks: false,
           requires_strict_status_checks: true,
         },
