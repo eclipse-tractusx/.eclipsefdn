@@ -45,6 +45,14 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "main"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
     orgs.newRepo('community') {
       allow_update_branch: false,
@@ -91,11 +99,27 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "main"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
     orgs.newRepo('eclipse-tractusx.github.io') {
       allow_update_branch: false,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
     orgs.newRepo('item-relationship-service') {
       allow_update_branch: false,
@@ -107,6 +131,14 @@ orgs.newOrg('eclipse-tractusx') {
           required_approving_review_count: 1,
           requires_status_checks: false,
           requires_strict_status_checks: true,
+        },
+      ],
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
         },
       ],
     },
@@ -130,26 +162,66 @@ orgs.newOrg('eclipse-tractusx') {
       description: "managed-identity-wallets",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
     orgs.newRepo('managed-service-orchestrator') {
       allow_update_branch: false,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
     orgs.newRepo('managed-simple-data-exchanger') {
       allow_update_branch: false,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "main"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
     orgs.newRepo('managed-simple-data-exchanger-backend') {
       allow_update_branch: false,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
     orgs.newRepo('managed-simple-data-exchanger-frontend') {
       allow_update_branch: false,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
     orgs.newRepo('online-simulation-kit') {
       allow_update_branch: false,
@@ -297,21 +369,53 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
     orgs.newRepo('sldt-digital-twin-registry') {
       allow_update_branch: false,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
     orgs.newRepo('sldt-discovery-finder') {
       allow_update_branch: false,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
     orgs.newRepo('sldt-semantic-hub') {
       allow_update_branch: false,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
     orgs.newRepo('sldt-semantic-models') {
       allow_update_branch: false,
@@ -342,6 +446,14 @@ orgs.newOrg('eclipse-tractusx') {
           requires_strict_status_checks: true,
         },
       ],
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
     orgs.newRepo('traceability-foss-backend') {
       allow_update_branch: false,
@@ -355,16 +467,40 @@ orgs.newOrg('eclipse-tractusx') {
           requires_strict_status_checks: true,
         },
       ],
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
     orgs.newRepo('tractus-x-release') {
       allow_update_branch: false,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
     orgs.newRepo('tractusx-edc') {
       allow_update_branch: false,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
     orgs.newRepo('tractusx-quality-checks') {
       allow_update_branch: false,
@@ -375,6 +511,14 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
     orgs.newRepo('vas-country-risk-backend') {
       allow_update_branch: false,
