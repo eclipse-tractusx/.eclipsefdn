@@ -156,6 +156,7 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('eclipse-tractusx.github.io') {
       allow_update_branch: false,
+      homepage: "https://eclipse-tractusx.github.io/",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       environments: [
