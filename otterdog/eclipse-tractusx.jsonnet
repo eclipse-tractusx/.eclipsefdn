@@ -73,6 +73,14 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
     orgs.newRepo('demand-capacity-mgmt') {
       allow_update_branch: false,
