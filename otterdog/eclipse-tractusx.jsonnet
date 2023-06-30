@@ -18,6 +18,44 @@ orgs.newOrg('eclipse-tractusx') {
     ],
     web_commit_signoff_required: false,
   },
+  secrets+: [
+    orgs.newOrgSecret('DOCKER_HUB_TOKEN') {
+      value: "********",
+    },
+    orgs.newOrgSecret('DOCKER_HUB_USER') {
+      value: "********",
+    },
+    orgs.newOrgSecret('ORG_GPG_PASSPHRASE') {
+      value: "********",
+    },
+    orgs.newOrgSecret('ORG_GPG_PRIVATE_KEY') {
+      value: "********",
+    },
+    orgs.newOrgSecret('ORG_OSSRH_PASSWORD') {
+      value: "********",
+    },
+    orgs.newOrgSecret('ORG_OSSRH_USERNAME') {
+      value: "********",
+    },
+    orgs.newOrgSecret('ORG_PORTAL_DISPATCH_APPID') {
+      value: "********",
+    },
+    orgs.newOrgSecret('ORG_PORTAL_DISPATCH_KEY') {
+      value: "********",
+    },
+    orgs.newOrgSecret('ORG_VERACODE_API_ID') {
+      value: "********",
+    },
+    orgs.newOrgSecret('ORG_VERACODE_API_KEY') {
+      value: "********",
+    },
+    orgs.newOrgSecret('VERACODE_API_ID') {
+      value: "********",
+    },
+    orgs.newOrgSecret('VERACODE_API_KEY') {
+      value: "********",
+    },
+  ],
   _repositories+:: [
     orgs.newRepo('.github') {
       allow_update_branch: false,
@@ -134,6 +172,17 @@ orgs.newOrg('eclipse-tractusx') {
       delete_branch_on_merge: true,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      secrets: [
+        orgs.newRepoSecret('SONAR_ORGANIZATION') {
+          value: "********",
+        },
+        orgs.newRepoSecret('SONAR_PROJECT_KEY') {
+          value: "********",
+        },
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "********",
+        },
+      ],
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
@@ -261,6 +310,11 @@ orgs.newOrg('eclipse-tractusx') {
       delete_branch_on_merge: true,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "********",
+        },
+      ],
       branch_protection_rules: [
         orgs.newBranchProtectionRule('dev') {
           dismisses_stale_reviews: true,
@@ -350,6 +404,14 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      secrets: [
+        orgs.newRepoSecret('NPM_PUBLISH') {
+          value: "********",
+        },
+      ],
+      environments: [
+        orgs.newEnvironment('github-pages'),
+      ],
     },
     orgs.newRepo('puris-backend') {
       allow_update_branch: false,
@@ -377,6 +439,11 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "********",
+        },
+      ],
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -403,6 +470,11 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "********",
+        },
+      ],
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -430,6 +502,32 @@ orgs.newOrg('eclipse-tractusx') {
       description: "sldt-semantic-models",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      secrets: [
+        orgs.newRepoSecret('CLIENT_ID_DEV') {
+          value: "********",
+        },
+        orgs.newRepoSecret('CLIENT_ID_INT') {
+          value: "********",
+        },
+        orgs.newRepoSecret('CLIENT_SECRET_DEV') {
+          value: "********",
+        },
+        orgs.newRepoSecret('CLIENT_SECRET_INT') {
+          value: "********",
+        },
+        orgs.newRepoSecret('IDP_URL_DEV') {
+          value: "********",
+        },
+        orgs.newRepoSecret('IDP_URL_INT') {
+          value: "********",
+        },
+        orgs.newRepoSecret('SEMANTIC_HUB_DEV_BASE') {
+          value: "********",
+        },
+        orgs.newRepoSecret('SEMANTIC_HUB_INT_BASE') {
+          value: "********",
+        },
+      ],
     },
     orgs.newRepo('ssi-docu') {
       allow_update_branch: false,
@@ -447,6 +545,14 @@ orgs.newOrg('eclipse-tractusx') {
       delete_branch_on_merge: true,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN_BACKEND') {
+          value: "********",
+        },
+        orgs.newRepoSecret('SONAR_TOKEN_FRONTEND') {
+          value: "********",
+        },
+      ],
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
@@ -468,6 +574,11 @@ orgs.newOrg('eclipse-tractusx') {
       delete_branch_on_merge: true,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "********",
+        },
+      ],
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
@@ -501,6 +612,29 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      secrets: [
+        orgs.newRepoSecret('AZURE_CLIENT_ID') {
+          value: "********",
+        },
+        orgs.newRepoSecret('AZURE_CLIENT_SECRET') {
+          value: "********",
+        },
+        orgs.newRepoSecret('AZURE_TENANT_ID') {
+          value: "********",
+        },
+        orgs.newRepoSecret('AZURE_VAULT_NAME') {
+          value: "********",
+        },
+        orgs.newRepoSecret('GPG_PASSPHRASE') {
+          value: "********",
+        },
+        orgs.newRepoSecret('GPG_PRIVATE_KEY') {
+          value: "********",
+        },
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "********",
+        },
+      ],
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
