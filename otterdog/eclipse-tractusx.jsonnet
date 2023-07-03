@@ -92,7 +92,8 @@ orgs.newOrg('eclipse-tractusx') {
         },
       ],
     },
-    orgs.newRepo('community') {
+    orgs.newRepo('sig-project-managment') {
+      aliases: ['community'],
       allow_update_branch: false,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
