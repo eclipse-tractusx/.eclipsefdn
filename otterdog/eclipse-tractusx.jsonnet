@@ -437,6 +437,7 @@ orgs.newOrg('eclipse-tractusx') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('sig-project-management') {
+      aliases: ['sig-project-managment'],
       allow_update_branch: false,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
