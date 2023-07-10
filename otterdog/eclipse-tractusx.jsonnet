@@ -408,7 +408,7 @@ orgs.newOrg('eclipse-tractusx') {
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
-            "gh-pages"
+            "main"
           ],
           deployment_branch_policy: "selected",
         },
