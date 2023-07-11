@@ -414,6 +414,12 @@ orgs.newOrg('eclipse-tractusx') {
         },
       ],
     },
+    orgs.newRepo('puris') {
+      allow_update_branch: false,
+      description: "puris",
+      secret_scanning_push_protection: "disabled",
+      web_commit_signoff_required: false,
+    },
     orgs.newRepo('puris-backend') {
       allow_update_branch: false,
       description: "puris-backend",
