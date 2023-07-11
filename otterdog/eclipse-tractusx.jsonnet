@@ -20,16 +20,16 @@ orgs.newOrg('eclipse-tractusx') {
   },
   secrets+: [
     orgs.newOrgSecret('DOCKER_HUB_TOKEN') {
-      value: "********",
+      value: "pass:bots/automotive.tractusx/docker.com/token",
     },
     orgs.newOrgSecret('DOCKER_HUB_USER') {
-      value: "********",
+      value: "pass:bots/automotive.tractusx/docker.com/username",
     },
     orgs.newOrgSecret('ORG_GPG_PASSPHRASE') {
-      value: "********",
+      value: "pass:bots/automotive.tractusx/gpg/passphrase",
     },
     orgs.newOrgSecret('ORG_GPG_PRIVATE_KEY') {
-      value: "********",
+      value: "pass:bots/automotive.tractusx/gpg/secret-keys.asc",
     },
     orgs.newOrgSecret('ORG_OSSRH_PASSWORD') {
       value: "********",
@@ -44,16 +44,16 @@ orgs.newOrg('eclipse-tractusx') {
       value: "********",
     },
     orgs.newOrgSecret('ORG_VERACODE_API_ID') {
-      value: "********",
+      value: "pass:bots/automotive.tractusx/veracode.com/api-id",
     },
     orgs.newOrgSecret('ORG_VERACODE_API_KEY') {
-      value: "********",
+      value: "pass:bots/automotive.tractusx/veracode.com/api-key",
     },
     orgs.newOrgSecret('VERACODE_API_ID') {
-      value: "********",
+      value: "pass:bots/automotive.tractusx/veracode.com/api-id",
     },
     orgs.newOrgSecret('VERACODE_API_KEY') {
-      value: "********",
+      value: "pass:bots/automotive.tractusx/veracode.com/api-key",
     },
   ],
   _repositories+:: [
