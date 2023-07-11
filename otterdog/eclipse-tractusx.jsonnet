@@ -416,9 +416,17 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('puris') {
       allow_update_branch: false,
-      description: "puris",
+      delete_branch_on_merge: true,
+      description: "Predictive Unit Real-Time Information Service (PURIS) for Short Term Demand and Capacity Management",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+      ],
     },
     orgs.newRepo('puris-backend') {
       allow_update_branch: false,
