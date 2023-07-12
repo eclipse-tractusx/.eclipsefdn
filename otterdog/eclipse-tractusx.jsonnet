@@ -138,6 +138,7 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('e2e-testing') {
       allow_update_branch: false,
+      has_discussions: true,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       environments: [
@@ -151,6 +152,7 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('eclipse-tractusx.github.io') {
       allow_update_branch: false,
+      has_discussions: true,
       homepage: "https://eclipse-tractusx.github.io/",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
@@ -207,6 +209,7 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('managed-identity-wallet') {
       allow_update_branch: false,
+      has_discussions: true,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
@@ -278,6 +281,7 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('online-simulation-kit') {
       allow_update_branch: false,
+      has_discussions: true,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
@@ -446,12 +450,13 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('sig-infra') {
       allow_update_branch: false,
+      has_discussions: true,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('sig-release') {
-      aliases: ['sig-project-management'],
       allow_update_branch: false,
+      has_discussions: true,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
@@ -551,6 +556,7 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('ssi-docu') {
       allow_update_branch: false,
+      has_discussions: true,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
@@ -630,6 +636,7 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('tractusx-edc') {
       allow_update_branch: false,
+      has_discussions: true,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       secrets: [
@@ -652,6 +659,12 @@ orgs.newOrg('eclipse-tractusx') {
           value: "********",
         },
         orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "********",
+        },
+        orgs.newRepoSecret('SWAGGERHUB_API_KEY') {
+          value: "********",
+        },
+        orgs.newRepoSecret('SWAGGERHUB_USER') {
           value: "********",
         },
       ],
