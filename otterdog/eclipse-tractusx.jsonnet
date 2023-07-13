@@ -662,10 +662,10 @@ orgs.newOrg('eclipse-tractusx') {
           value: "********",
         },
         orgs.newRepoSecret('SWAGGERHUB_API_KEY') {
-          value: "********",
+          value: "pass:bots/automotive.tractusx/swaggerhub.com/api-key",
         },
         orgs.newRepoSecret('SWAGGERHUB_USER') {
-          value: "********",
+          value: "pass:bots/automotive.tractusx/swaggerhub.com/username",
         },
       ],
       environments: [
