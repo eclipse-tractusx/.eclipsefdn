@@ -168,6 +168,7 @@ orgs.newOrg('eclipse-tractusx') {
     orgs.newRepo('item-relationship-service') {
       allow_update_branch: false,
       delete_branch_on_merge: true,
+      dependabot_security_updates_enabled: true,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       secrets: [
