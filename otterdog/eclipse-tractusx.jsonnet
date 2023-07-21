@@ -286,11 +286,6 @@ orgs.newOrg('eclipse-tractusx') {
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('ontology') {
-      allow_update_branch: false,
-      secret_scanning_push_protection: "disabled",
-      web_commit_signoff_required: false,
-    },
     orgs.newRepo('portal-assets') {
       allow_update_branch: false,
       delete_branch_on_merge: true,
