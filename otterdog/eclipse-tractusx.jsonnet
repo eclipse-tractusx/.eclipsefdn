@@ -32,16 +32,16 @@ orgs.newOrg('eclipse-tractusx') {
       value: "pass:bots/automotive.tractusx/gpg/secret-keys.asc",
     },
     orgs.newOrgSecret('ORG_OSSRH_PASSWORD') {
-      value: "********",
+      value: "pass:bots/automotive.tractusx/oss.sonatype.org/password",
     },
     orgs.newOrgSecret('ORG_OSSRH_USERNAME') {
-      value: "********",
+      value: "pass:bots/automotive.tractusx/oss.sonatype.org/username",
     },
     orgs.newOrgSecret('ORG_PORTAL_DISPATCH_APPID') {
-      value: "********",
+      value: "pass:bots/automotive.tractusx/github.com/github-app-id",
     },
     orgs.newOrgSecret('ORG_PORTAL_DISPATCH_KEY') {
-      value: "********",
+      value: "pass:bots/automotive.tractusx/github.com/github-app-private-key",
     },
     orgs.newOrgSecret('ORG_VERACODE_API_ID') {
       value: "pass:bots/automotive.tractusx/veracode.com/api-id",
