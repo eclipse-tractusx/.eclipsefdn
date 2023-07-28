@@ -29,7 +29,7 @@ orgs.newOrg('eclipse-tractusx') {
       value: "pass:bots/automotive.tractusx/gpg/passphrase",
     },
     orgs.newOrgSecret('ORG_GPG_PRIVATE_KEY') {
-      value: "pass:bots/automotive.tractusx/gpg/secret-keys.asc",
+      value: "pass:bots/automotive.tractusx/gpg/secret-subkeys.asc",
     },
     orgs.newOrgSecret('ORG_OSSRH_PASSWORD') {
       value: "pass:bots/automotive.tractusx/oss.sonatype.org/password",
