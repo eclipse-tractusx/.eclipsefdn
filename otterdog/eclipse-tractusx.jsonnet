@@ -81,6 +81,9 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('charts') {
       allow_update_branch: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "main",
+      gh_pages_source_path: "/",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       environments: [
@@ -104,6 +107,9 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('data-exchange-test-service') {
       allow_update_branch: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       environments: [
@@ -138,6 +144,9 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('e2e-testing') {
       allow_update_branch: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "main",
+      gh_pages_source_path: "/",
       has_discussions: true,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
@@ -152,6 +161,9 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('eclipse-tractusx.github.io') {
       allow_update_branch: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
       has_discussions: true,
       homepage: "https://eclipse-tractusx.github.io/",
       secret_scanning_push_protection: "disabled",
@@ -169,6 +181,9 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: true,
       dependabot_security_updates_enabled: true,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       secrets: [
@@ -217,6 +232,9 @@ orgs.newOrg('eclipse-tractusx') {
     orgs.newRepo('managed-identity-wallets-archived') {
       allow_update_branch: false,
       description: "managed-identity-wallets",
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       environments: [
@@ -230,6 +248,9 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('managed-service-orchestrator') {
       allow_update_branch: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       environments: [
@@ -243,6 +264,9 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('managed-simple-data-exchanger') {
       allow_update_branch: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "main",
+      gh_pages_source_path: "/",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       environments: [
@@ -256,6 +280,9 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('managed-simple-data-exchanger-backend') {
       allow_update_branch: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       environments: [
@@ -269,6 +296,9 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('managed-simple-data-exchanger-frontend') {
       allow_update_branch: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       environments: [
@@ -398,6 +428,7 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('portal-shared-components') {
       allow_update_branch: false,
+      gh_pages_build_type: "workflow",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       secrets: [
@@ -458,6 +489,9 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('sldt-bpn-discovery') {
       allow_update_branch: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       secrets: [
@@ -476,6 +510,9 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('sldt-digital-twin-registry') {
       allow_update_branch: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       environments: [
@@ -489,6 +526,9 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('sldt-discovery-finder') {
       allow_update_branch: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       secrets: [
@@ -507,6 +547,9 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('sldt-semantic-hub') {
       allow_update_branch: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       environments: [
@@ -565,6 +608,9 @@ orgs.newOrg('eclipse-tractusx') {
     orgs.newRepo('traceability-foss') {
       allow_update_branch: false,
       delete_branch_on_merge: true,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       secrets: [
@@ -594,6 +640,9 @@ orgs.newOrg('eclipse-tractusx') {
     orgs.newRepo('traceability-foss-backend') {
       allow_update_branch: false,
       delete_branch_on_merge: true,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       secrets: [
@@ -619,6 +668,9 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('tractus-x-release') {
       allow_update_branch: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       environments: [
@@ -632,6 +684,9 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('tractusx-edc') {
       allow_update_branch: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
       has_discussions: true,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
@@ -680,6 +735,9 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('vas-country-risk') {
       allow_update_branch: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       environments: [
