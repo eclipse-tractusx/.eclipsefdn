@@ -733,6 +733,10 @@ orgs.newOrg('eclipse-tractusx') {
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
+    orgs.newRepo('tutorial-resources') {
+      allow_update_branch: false,
+      web_commit_signoff_required: false,
+    },
     orgs.newRepo('vas-country-risk') {
       allow_update_branch: false,
       gh_pages_build_type: "legacy",
