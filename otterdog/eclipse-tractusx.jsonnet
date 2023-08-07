@@ -466,6 +466,20 @@ orgs.newOrg('eclipse-tractusx') {
         },
       ],
     },
+    orgs.newRepo('puris-backend') {
+      archived: true,
+      allow_update_branch: false,
+      description: "puris-backend",
+      secret_scanning_push_protection: "disabled",
+      web_commit_signoff_required: false,
+    },
+    orgs.newRepo('puris-frontend') {
+      archived: true,
+      allow_update_branch: false,
+      description: "puris-frontend",
+      secret_scanning_push_protection: "disabled",
+      web_commit_signoff_required: false,
+    },
     orgs.newRepo('sd-factory') {
       allow_update_branch: false,
       secret_scanning_push_protection: "disabled",
