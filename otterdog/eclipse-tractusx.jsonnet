@@ -181,6 +181,10 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       web_commit_signoff_required: false,
     },
+    orgs.newRepo('eco-pass-kit') {
+      allow_update_branch: false,
+      web_commit_signoff_required: false,
+    },
     orgs.newRepo('item-relationship-service') {
       allow_update_branch: false,
       delete_branch_on_merge: true,
