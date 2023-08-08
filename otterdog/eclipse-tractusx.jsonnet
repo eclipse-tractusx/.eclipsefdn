@@ -745,6 +745,9 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('tutorial-resources') {
       allow_update_branch: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('vas-country-risk') {
