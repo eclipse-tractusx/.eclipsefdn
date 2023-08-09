@@ -504,6 +504,7 @@ orgs.newOrg('eclipse-tractusx') {
       has_discussions: true,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      homepage: "https://eclipse-tractusx.github.io/sig-release",
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
