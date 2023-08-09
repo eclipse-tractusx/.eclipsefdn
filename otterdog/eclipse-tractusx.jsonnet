@@ -73,6 +73,10 @@ orgs.newOrg('eclipse-tractusx') {
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
+    orgs.newRepo('asset-tracking-platform') {
+      allow_update_branch: false,
+      web_commit_signoff_required: false,
+    },
     orgs.newRepo('bpdm') {
       allow_update_branch: false,
       description: "bpdm",
