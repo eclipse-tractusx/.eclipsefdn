@@ -43,6 +43,12 @@ orgs.newOrg('eclipse-tractusx') {
     orgs.newOrgSecret('ORG_PORTAL_DISPATCH_KEY') {
       value: "pass:bots/automotive.tractusx/github.com/github-app-private-key",
     },
+    orgs.newOrgSecret('SWAGGERHUB_API_KEY') {
+      value: "pass:bots/automotive.tractusx/swaggerhub.com/api-key",
+    },
+    orgs.newOrgSecret('SWAGGERHUB_USER') {
+      value: "pass:bots/automotive.tractusx/swaggerhub.com/username",
+    },
     orgs.newOrgSecret('ORG_VERACODE_API_ID') {
       value: "pass:bots/automotive.tractusx/veracode.com/api-id",
     },
@@ -741,12 +747,6 @@ orgs.newOrg('eclipse-tractusx') {
         },
         orgs.newRepoSecret('SONAR_TOKEN') {
           value: "********",
-        },
-        orgs.newRepoSecret('SWAGGERHUB_API_KEY') {
-          value: "pass:bots/automotive.tractusx/swaggerhub.com/api-key",
-        },
-        orgs.newRepoSecret('SWAGGERHUB_USER') {
-          value: "pass:bots/automotive.tractusx/swaggerhub.com/username",
         },
       ],
       environments: [
