@@ -136,18 +136,6 @@ orgs.newOrg('eclipse-tractusx') {
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('demand-capacity-mgmt-backend') {
-      archived: true,
-      allow_update_branch: false,
-      secret_scanning_push_protection: "disabled",
-      web_commit_signoff_required: false,
-    },
-    orgs.newRepo('demand-capacity-mgmt-frontend') {
-      archived: true,
-      allow_update_branch: false,
-      secret_scanning_push_protection: "disabled",
-      web_commit_signoff_required: false,
-    },
     orgs.newRepo('digital-product-pass') {
       allow_update_branch: false,
       description: "digital product pass",
