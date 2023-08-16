@@ -435,14 +435,32 @@ orgs.newOrg('eclipse-tractusx') {
     orgs.newRepo('portal-iam') {
       allow_update_branch: false,
       description: "portal iam",
+      delete_branch_on_merge: true,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+      ],
     },
     orgs.newRepo('portal-shared-components') {
       allow_update_branch: false,
+      delete_branch_on_merge: true,
       gh_pages_build_type: "workflow",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+      ],
       secrets: [
         orgs.newRepoSecret('NPM_PUBLISH') {
           value: "********",
