@@ -330,6 +330,7 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('portal-assets') {
       allow_update_branch: false,
+      description: "Portal Assets",
       delete_branch_on_merge: true,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
@@ -344,6 +345,7 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('portal-backend') {
       allow_update_branch: false,
+      description: "Portal Backend",
       default_branch: "main",
       delete_branch_on_merge: true,
       secret_scanning_push_protection: "disabled",
@@ -372,7 +374,7 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       default_branch: "main",
       delete_branch_on_merge: true,
-      description: "portal cd",
+      description: "Portal - Continuous Deployment",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       branch_protection_rules: [
@@ -392,6 +394,7 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('portal-frontend') {
       allow_update_branch: false,
+      description: "Portal Frontend",
       default_branch: "main",
       delete_branch_on_merge: true,
       secret_scanning_push_protection: "disabled",
@@ -413,6 +416,7 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('portal-frontend-registration') {
       allow_update_branch: false,
+      description: "Portal Frontend Registration",
       default_branch: "main",
       delete_branch_on_merge: true,
       secret_scanning_push_protection: "disabled",
@@ -434,7 +438,7 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('portal-iam') {
       allow_update_branch: false,
-      description: "portal iam",
+      description: "IAM - Keycloak instances",
       delete_branch_on_merge: true,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
@@ -449,6 +453,7 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('portal-shared-components') {
       allow_update_branch: false,
+      description: "Portal Shared UI Components",
       delete_branch_on_merge: true,
       gh_pages_build_type: "workflow",
       secret_scanning_push_protection: "disabled",
