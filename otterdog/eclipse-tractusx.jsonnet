@@ -344,7 +344,7 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('portal-backend') {
       allow_update_branch: false,
-      default_branch: "dev",
+      default_branch: "main",
       delete_branch_on_merge: true,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
@@ -370,7 +370,7 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('portal-cd') {
       allow_update_branch: false,
-      default_branch: "dev",
+      default_branch: "main",
       delete_branch_on_merge: true,
       description: "portal cd",
       secret_scanning_push_protection: "disabled",
@@ -392,7 +392,7 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('portal-frontend') {
       allow_update_branch: false,
-      default_branch: "dev",
+      default_branch: "main",
       delete_branch_on_merge: true,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
@@ -413,7 +413,7 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('portal-frontend-registration') {
       allow_update_branch: false,
-      default_branch: "dev",
+      default_branch: "main",
       delete_branch_on_merge: true,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
