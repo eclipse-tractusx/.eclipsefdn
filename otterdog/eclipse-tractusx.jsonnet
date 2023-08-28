@@ -226,6 +226,11 @@ orgs.newOrg('eclipse-tractusx') {
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
+    orgs.newRepo('knowledge-agents-aas-bridge') {
+      allow_update_branch: false,
+      secret_scanning_push_protection: "disabled",
+      web_commit_signoff_required: false,
+    },
     orgs.newRepo('knowledge-agents-edc') {
       allow_update_branch: false,
       secret_scanning_push_protection: "disabled",
