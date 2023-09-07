@@ -208,6 +208,7 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('knowledge-agents') {
       allow_update_branch: false,
+      description: "Reference Implementations of CX-0084 (Federated Queries In Data Spaces)",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('knowledge-agents-aas-bridge') {
@@ -216,6 +217,7 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('knowledge-agents-edc') {
       allow_update_branch: false,
+      description: "EDC Extensions for CX-0084 (Federated Queries In Data Spaces)",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('managed-identity-wallet') {
