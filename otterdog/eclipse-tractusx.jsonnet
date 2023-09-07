@@ -4,7 +4,6 @@ orgs.newOrg('eclipse-tractusx') {
   settings+: {
     billing_email: "webmaster@eclipse.org",
     default_repository_permission: "none",
-    default_workflow_permissions: "write",
     dependabot_security_updates_enabled_for_new_repositories: false,
     description: "",
     name: "Eclipse Tractus-X",
@@ -15,6 +14,9 @@ orgs.newOrg('eclipse-tractusx') {
       "automotive-tractusx-committers"
     ],
     web_commit_signoff_required: false,
+    workflows+: {
+      default_workflow_permissions: "write",
+    },
   },
   secrets+: [
     orgs.newOrgSecret('DOCKER_HUB_TOKEN') {
@@ -41,17 +43,17 @@ orgs.newOrg('eclipse-tractusx') {
     orgs.newOrgSecret('ORG_PORTAL_DISPATCH_KEY') {
       value: "pass:bots/automotive.tractusx/github.com/github-app-private-key",
     },
-    orgs.newOrgSecret('SWAGGERHUB_API_KEY') {
-      value: "pass:bots/automotive.tractusx/swaggerhub.com/api-key",
-    },
-    orgs.newOrgSecret('SWAGGERHUB_USER') {
-      value: "pass:bots/automotive.tractusx/swaggerhub.com/username",
-    },
     orgs.newOrgSecret('ORG_VERACODE_API_ID') {
       value: "pass:bots/automotive.tractusx/veracode.com/api-id",
     },
     orgs.newOrgSecret('ORG_VERACODE_API_KEY') {
       value: "pass:bots/automotive.tractusx/veracode.com/api-key",
+    },
+    orgs.newOrgSecret('SWAGGERHUB_API_KEY') {
+      value: "pass:bots/automotive.tractusx/swaggerhub.com/api-key",
+    },
+    orgs.newOrgSecret('SWAGGERHUB_USER') {
+      value: "pass:bots/automotive.tractusx/swaggerhub.com/username",
     },
     orgs.newOrgSecret('VERACODE_API_ID') {
       value: "pass:bots/automotive.tractusx/veracode.com/api-id",
@@ -310,8 +312,8 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('portal-assets') {
       allow_update_branch: false,
-      description: "Portal Assets",
       delete_branch_on_merge: true,
+      description: "Portal Assets",
       web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
@@ -324,8 +326,8 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('portal-backend') {
       allow_update_branch: false,
-      description: "Portal Backend",
       delete_branch_on_merge: true,
+      description: "Portal Backend",
       web_commit_signoff_required: false,
       secrets: [
         orgs.newRepoSecret('SONAR_TOKEN') {
@@ -369,8 +371,8 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('portal-frontend') {
       allow_update_branch: false,
-      description: "Portal Frontend",
       delete_branch_on_merge: true,
+      description: "Portal Frontend",
       web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('dev') {
@@ -389,8 +391,8 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('portal-frontend-registration') {
       allow_update_branch: false,
-      description: "Portal Frontend Registration",
       delete_branch_on_merge: true,
+      description: "Portal Frontend Registration",
       web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('dev') {
@@ -409,8 +411,8 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('portal-iam') {
       allow_update_branch: false,
-      description: "IAM - Keycloak instances",
       delete_branch_on_merge: true,
+      description: "IAM - Keycloak instances",
       web_commit_signoff_required: false,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
@@ -423,21 +425,21 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('portal-shared-components') {
       allow_update_branch: false,
-      description: "Portal Shared UI Components",
       delete_branch_on_merge: true,
+      description: "Portal Shared UI Components",
       gh_pages_build_type: "workflow",
       web_commit_signoff_required: false,
+      secrets: [
+        orgs.newRepoSecret('NPM_PUBLISH') {
+          value: "********",
+        },
+      ],
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           dismisses_stale_reviews: true,
           required_approving_review_count: 1,
           requires_status_checks: false,
           requires_strict_status_checks: true,
-        },
-      ],
-      secrets: [
-        orgs.newRepoSecret('NPM_PUBLISH') {
-          value: "********",
         },
       ],
       environments: [
@@ -463,22 +465,20 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('puris-backend') {
       archived: true,
-      allow_update_branch: false,
       description: "puris-backend",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('puris-frontend') {
       archived: true,
-      allow_update_branch: false,
       description: "puris-frontend",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('sd-factory') {
       allow_update_branch: false,
-      web_commit_signoff_required: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
+      web_commit_signoff_required: false,
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -493,26 +493,26 @@ orgs.newOrg('eclipse-tractusx') {
       has_discussions: true,
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('sig-security') {
-      allow_update_branch: false,
-      web_commit_signoff_required: false,
-    },
     orgs.newRepo('sig-release') {
       allow_update_branch: false,
-      has_discussions: true,
-      web_commit_signoff_required: false,
-      homepage: "https://eclipse-tractusx.github.io/sig-release",
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
+      has_discussions: true,
+      homepage: "https://eclipse-tractusx.github.io/sig-release",
+      web_commit_signoff_required: false,
       environments: [
-          orgs.newEnvironment('github-pages') {
-            branch_policies+: [
-              "gh-pages"
-            ],
-            deployment_branch_policy: "selected",
-          },
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
       ],
+    },
+    orgs.newRepo('sig-security') {
+      allow_update_branch: false,
+      web_commit_signoff_required: false,
     },
     orgs.newRepo('sldt-bpn-discovery') {
       allow_update_branch: false,
