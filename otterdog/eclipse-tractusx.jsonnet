@@ -622,6 +622,22 @@ orgs.newOrg('eclipse-tractusx') {
       has_discussions: true,
       web_commit_signoff_required: false,
     },
+    orgs.newRepo('identity-trust') {
+      allow_update_branch: false,
+      has_discussions: true,
+      web_commit_signoff_required: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
+    },
     orgs.newRepo('testdata-provider') {
       allow_update_branch: false,
       description: "Testdata Provider",
