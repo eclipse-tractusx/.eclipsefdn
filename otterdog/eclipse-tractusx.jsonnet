@@ -596,6 +596,7 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
+      has_discussions: true,
     },
     orgs.newRepo('sldt-bpn-discovery') {
       allow_merge_commit: true,
