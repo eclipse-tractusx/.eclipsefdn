@@ -228,6 +228,7 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
+      has_discussions: true,
       web_commit_signoff_required: false,
       secrets: [
         orgs.newRepoSecret('SONAR_ORGANIZATION') {
