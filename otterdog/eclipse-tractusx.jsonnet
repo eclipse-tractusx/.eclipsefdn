@@ -597,6 +597,7 @@ orgs.newOrg('eclipse-tractusx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
       web_commit_signoff_required: false,
       has_discussions: true,
     },
