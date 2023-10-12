@@ -758,6 +758,7 @@ orgs.newOrg('eclipse-tractusx') {
       ],
     },
     orgs.newRepo('traceability-foss-backend') {
+      archived: true,
       allow_merge_commit: true,
       allow_update_branch: false,
       gh_pages_build_type: "legacy",
