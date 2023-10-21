@@ -4,6 +4,9 @@ strict: false
 
 site_url: https://eclipse-tractusx.github.io/.eclipsefdn/
 
+repo_name: eclipse-tractusx/.eclipsefdn
+repo_url: https://github.com/eclipse-tractusx/.eclipsefdn/
+
 docs_dir: ./docs
 site_dir: ./_site
 
