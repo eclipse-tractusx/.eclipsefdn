@@ -182,7 +182,6 @@ orgs.newOrg('eclipse-tractusx') {
     orgs.newRepo('eclipse-tractusx.github.io') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
