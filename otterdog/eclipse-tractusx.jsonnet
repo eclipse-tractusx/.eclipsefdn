@@ -95,6 +95,13 @@ orgs.newOrg('eclipse-tractusx') {
       description: "bpdm",
       web_commit_signoff_required: false,
     },
+    orgs.newRepo('bpdm-certificate-management') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "reference implementation for business partner certificates",
+      web_commit_signoff_required: false,
+    },
     orgs.newRepo('charts') {
       allow_merge_commit: true,
       allow_update_branch: false,
