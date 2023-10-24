@@ -3,7 +3,6 @@ local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 orgs.newOrg('eclipse-tractusx') {
   settings+: {
     billing_email: "webmaster@eclipse.org",
-    default_repository_permission: "none",
     dependabot_security_updates_enabled_for_new_repositories: false,
     description: "",
     name: "Eclipse Tractus-X",
@@ -68,12 +67,18 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('SSI-agent-lib') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('app-dashboard') {
       allow_merge_commit: true,
@@ -81,12 +86,18 @@ orgs.newOrg('eclipse-tractusx') {
       delete_branch_on_merge: false,
       description: "app-dashboard",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('asset-tracking-platform') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('bpdm') {
       allow_merge_commit: true,
@@ -94,6 +105,9 @@ orgs.newOrg('eclipse-tractusx') {
       delete_branch_on_merge: false,
       description: "bpdm",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('bpdm-certificate-management') {
       allow_merge_commit: true,
@@ -101,6 +115,9 @@ orgs.newOrg('eclipse-tractusx') {
       delete_branch_on_merge: false,
       description: "reference implementation for business partner certificates",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('charts') {
       allow_merge_commit: true,
@@ -110,6 +127,9 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_branch: "main",
       gh_pages_source_path: "/",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -124,12 +144,18 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('daps-registration-service') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('data-exchange-test-service') {
       allow_merge_commit: true,
@@ -139,6 +165,9 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -153,6 +182,9 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('digital-product-pass') {
       allow_merge_commit: true,
@@ -160,6 +192,9 @@ orgs.newOrg('eclipse-tractusx') {
       delete_branch_on_merge: false,
       description: "digital product pass",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('e2e-testing') {
       allow_merge_commit: true,
@@ -170,6 +205,9 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_path: "/",
       has_discussions: true,
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -188,6 +226,9 @@ orgs.newOrg('eclipse-tractusx') {
       has_discussions: true,
       homepage: "https://eclipse-tractusx.github.io/",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -202,12 +243,18 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('eco-pass-kit') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('identity-trust') {
       allow_merge_commit: true,
@@ -218,6 +265,9 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_path: "/",
       has_discussions: true,
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -236,6 +286,9 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_path: "/",
       has_discussions: true,
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       secrets: [
         orgs.newRepoSecret('SONAR_ORGANIZATION') {
           value: "********",
@@ -269,12 +322,18 @@ orgs.newOrg('eclipse-tractusx') {
       delete_branch_on_merge: false,
       description: "Reference Implementations of CX-0084 (Federated Queries In Data Spaces)",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('knowledge-agents-aas-bridge') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('knowledge-agents-edc') {
       allow_merge_commit: true,
@@ -282,6 +341,9 @@ orgs.newOrg('eclipse-tractusx') {
       delete_branch_on_merge: false,
       description: "EDC Extensions for CX-0084 (Federated Queries In Data Spaces)",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('managed-identity-wallet') {
       allow_merge_commit: true,
@@ -289,6 +351,9 @@ orgs.newOrg('eclipse-tractusx') {
       delete_branch_on_merge: false,
       has_discussions: true,
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('managed-identity-wallets-archived') {
       allow_merge_commit: true,
@@ -299,6 +364,9 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -316,6 +384,9 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -333,6 +404,9 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_branch: "main",
       gh_pages_source_path: "/",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -350,6 +424,9 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -367,6 +444,9 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -382,18 +462,27 @@ orgs.newOrg('eclipse-tractusx') {
       delete_branch_on_merge: false,
       has_discussions: true,
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('pcf-exchange-kit') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('portal-assets') {
       allow_merge_commit: true,
       allow_update_branch: false,
       description: "Portal Assets",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           dismisses_stale_reviews: true,
@@ -408,6 +497,9 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       description: "Portal Backend",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       secrets: [
         orgs.newRepoSecret('SONAR_TOKEN') {
           value: "********",
@@ -436,6 +528,9 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       description: "Portal - Continuous Deployment",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('dev') {
           required_approving_review_count: null,
@@ -456,6 +551,9 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       description: "Portal Frontend",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('dev') {
           dismisses_stale_reviews: true,
@@ -476,6 +574,9 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       description: "Portal Frontend Registration",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('dev') {
           dismisses_stale_reviews: true,
@@ -496,6 +597,9 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       description: "IAM - Keycloak instances",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           dismisses_stale_reviews: true,
@@ -511,6 +615,9 @@ orgs.newOrg('eclipse-tractusx') {
       description: "Portal Shared UI Components",
       gh_pages_build_type: "workflow",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       secrets: [
         orgs.newRepoSecret('NPM_PUBLISH') {
           value: "********",
@@ -538,6 +645,9 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       description: "Predictive Unit Real-Time Information Service (PURIS) for Short Term Demand and Capacity Management",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
@@ -547,13 +657,17 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('puris-backend') {
       archived: true,
-      description: "puris-backend",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('puris-frontend') {
       archived: true,
-      description: "puris-frontend",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('sd-factory') {
       allow_merge_commit: true,
@@ -563,6 +677,9 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -578,6 +695,9 @@ orgs.newOrg('eclipse-tractusx') {
       delete_branch_on_merge: false,
       has_discussions: true,
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('sig-release') {
       allow_merge_commit: true,
@@ -590,11 +710,14 @@ orgs.newOrg('eclipse-tractusx') {
       has_projects: false,
       homepage: "https://eclipse-tractusx.github.io/sig-release",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
-            required_approving_review_count: 1,
-            dismisses_stale_reviews: true
-            },
+          dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
+        },
       ],
       environments: [
         orgs.newEnvironment('github-pages') {
@@ -610,8 +733,11 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
-      web_commit_signoff_required: false,
       has_discussions: true,
+      web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('sldt-bpn-discovery') {
       allow_merge_commit: true,
@@ -621,6 +747,9 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       secrets: [
         orgs.newRepoSecret('SONAR_TOKEN') {
           value: "********",
@@ -643,6 +772,9 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -660,6 +792,9 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       secrets: [
         orgs.newRepoSecret('SONAR_TOKEN') {
           value: "********",
@@ -682,6 +817,9 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -697,6 +835,9 @@ orgs.newOrg('eclipse-tractusx') {
       delete_branch_on_merge: false,
       description: "sldt-semantic-models",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       secrets: [
         orgs.newRepoSecret('CLIENT_ID_DEV') {
           value: "********",
@@ -730,6 +871,9 @@ orgs.newOrg('eclipse-tractusx') {
       delete_branch_on_merge: false,
       has_discussions: true,
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('testdata-provider') {
       allow_merge_commit: true,
@@ -737,6 +881,9 @@ orgs.newOrg('eclipse-tractusx') {
       delete_branch_on_merge: false,
       description: "Testdata Provider",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('traceability-foss') {
       allow_merge_commit: true,
@@ -745,6 +892,9 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       secrets: [
         orgs.newRepoSecret('SONAR_TOKEN_BACKEND') {
           value: "********",
@@ -771,12 +921,13 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('traceability-foss-backend') {
       archived: true,
-      allow_merge_commit: true,
-      allow_update_branch: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       secrets: [
         orgs.newRepoSecret('SONAR_TOKEN') {
           value: "********",
@@ -806,6 +957,9 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -824,6 +978,9 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_path: "/",
       has_discussions: true,
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       secrets: [
         orgs.newRepoSecret('AZURE_CLIENT_ID') {
           value: "********",
@@ -861,6 +1018,9 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('tutorial-resources') {
       allow_merge_commit: true,
@@ -871,6 +1031,9 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_path: "/",
       has_discussions: true,
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -888,6 +1051,9 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -902,6 +1068,9 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
     },
   ],
 }
