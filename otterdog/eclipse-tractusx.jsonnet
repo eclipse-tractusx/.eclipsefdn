@@ -474,6 +474,17 @@ orgs.newOrg('eclipse-tractusx') {
         default_workflow_permissions: "write",
       },
     },
+    orgs.newRepo('policy-hub') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "Policy hub",
+      secret_scanning_push_protection: "disabled",
+      web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+    },
     orgs.newRepo('portal-assets') {
       allow_merge_commit: true,
       allow_update_branch: false,
@@ -656,6 +667,9 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('puris-backend') {
       archived: true,
+      dependabot_alerts_enabled: false,
+      description: "puris-backend",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -663,6 +677,9 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('puris-frontend') {
       archived: true,
+      dependabot_alerts_enabled: false,
+      description: "puris-frontend",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -712,6 +729,11 @@ orgs.newOrg('eclipse-tractusx') {
       workflows+: {
         default_workflow_permissions: "write",
       },
+      secrets: [
+        orgs.newRepoSecret('NOTIFICATION_EMAIL_PASSWORD') {
+          value: "********",
+        },
+      ],
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           dismisses_stale_reviews: true,
@@ -920,9 +942,11 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('traceability-foss-backend') {
       archived: true,
+      dependabot_alerts_enabled: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
