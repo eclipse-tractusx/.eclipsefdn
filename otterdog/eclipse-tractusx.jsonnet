@@ -348,10 +348,10 @@ orgs.newOrg('eclipse-tractusx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      has_discussions: true,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
+      has_discussions: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -664,6 +664,7 @@ orgs.newOrg('eclipse-tractusx') {
     orgs.newRepo('puris') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       description: "Predictive Unit Real-Time Information Service (PURIS) for Short Term Demand and Capacity Management",
       web_commit_signoff_required: false,
       workflows+: {
@@ -691,6 +692,15 @@ orgs.newOrg('eclipse-tractusx') {
       dependabot_alerts_enabled: false,
       description: "puris-frontend",
       secret_scanning_push_protection: "disabled",
+      web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+    },
+    orgs.newRepo('quality-dashboard') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -1098,15 +1108,6 @@ orgs.newOrg('eclipse-tractusx') {
       ],
     },
     orgs.newRepo('vas-country-risk-backend') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
-      web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "write",
-      },
-    },
-    orgs.newRepo('quality-dashboard') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
