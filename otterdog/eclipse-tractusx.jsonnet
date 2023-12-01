@@ -495,6 +495,17 @@ orgs.newOrg('eclipse-tractusx') {
       workflows+: {
         default_workflow_permissions: "write",
       },
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/automotive.tractusx/sonarcloud.io/token-policy-hub",
+        },
+        orgs.newRepoSecret('SONAR_ORGANIZATION') {
+          value: "eclipse-tractusx",
+        },
+        orgs.newRepoSecret('SONAR_PROJECT_KEY') {
+          value: "eclipse-tractusx_policy-hub",
+        },
+      ],
     },
     orgs.newRepo('portal-assets') {
       allow_merge_commit: true,
