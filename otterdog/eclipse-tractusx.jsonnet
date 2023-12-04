@@ -500,6 +500,14 @@ orgs.newOrg('eclipse-tractusx') {
           value: "pass:bots/automotive.tractusx/sonarcloud.io/token-policy-hub",
         },
       ],
+      variables: [
+        orgs.newRepoVariable('SONAR_ORGANIZATION') {
+          value: "eclipse-tractusx",
+        },
+        orgs.newRepoVariable('SONAR_PROJECT_KEY') {
+          value: "eclipse-tractusx_policy-hub",
+        },
+      ],
     },
     orgs.newRepo('portal-assets') {
       allow_merge_commit: true,
@@ -529,6 +537,14 @@ orgs.newOrg('eclipse-tractusx') {
       secrets: [
         orgs.newRepoSecret('SONAR_TOKEN') {
           value: "********",
+        },
+      ],
+      variables: [
+        orgs.newRepoVariable('SONAR_ORGANIZATION') {
+          value: "\r\neclipse-tractusx",
+        },
+        orgs.newRepoVariable('SONAR_PROJECT_KEY') {
+          value: "eclipse-tractusx_portal-backend",
         },
       ],
       branch_protection_rules: [
@@ -950,6 +966,17 @@ orgs.newOrg('eclipse-tractusx') {
           value: "********",
         },
       ],
+      variables: [
+        orgs.newRepoVariable('SONAR_ORGANIZATION') {
+          value: "eclipse-tractusx",
+        },
+        orgs.newRepoVariable('SONAR_PROJECT_KEY_BACKEND') {
+          value: "eclipse-tractusx_traceability-foss-backend",
+        },
+        orgs.newRepoVariable('SONAR_PROJECT_KEY_FRONTEND') {
+          value: "eclipse-tractusx_traceability-foss-frontend",
+        },
+      ],
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
@@ -980,6 +1007,14 @@ orgs.newOrg('eclipse-tractusx') {
       secrets: [
         orgs.newRepoSecret('SONAR_TOKEN') {
           value: "********",
+        },
+      ],
+      variables: [
+        orgs.newRepoVariable('SONAR_ORGANIZATION') {
+          value: "eclipse-tractusx",
+        },
+        orgs.newRepoVariable('SONAR_PROJECT_KEY') {
+          value: "eclipse-tractusx_traceability-foss-backend",
         },
       ],
       branch_protection_rules: [
@@ -1051,6 +1086,14 @@ orgs.newOrg('eclipse-tractusx') {
         },
         orgs.newRepoSecret('SONAR_TOKEN') {
           value: "********",
+        },
+      ],
+      variables: [
+        orgs.newRepoVariable('SONAR_ORGANIZATION') {
+          value: "eclipse-tractusx",
+        },
+        orgs.newRepoVariable('SONAR_PROJECT_KEY') {
+          value: "eclipse-tractusx_tractusx-edc",
         },
       ],
       environments: [
