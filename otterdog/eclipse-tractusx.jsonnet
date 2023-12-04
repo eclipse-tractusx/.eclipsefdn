@@ -541,7 +541,7 @@ orgs.newOrg('eclipse-tractusx') {
       ],
       variables: [
         orgs.newRepoVariable('SONAR_ORGANIZATION') {
-          value: "\r\neclipse-tractusx",
+          value: "eclipse-tractusx",
         },
         orgs.newRepoVariable('SONAR_PROJECT_KEY') {
           value: "eclipse-tractusx_portal-backend",
