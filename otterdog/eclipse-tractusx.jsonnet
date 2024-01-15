@@ -252,6 +252,7 @@ orgs.newOrg('eclipse-tractusx') {
       },
     },
     orgs.newRepo('eco-pass-kit') {
+      archived: true,
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -492,6 +493,7 @@ orgs.newOrg('eclipse-tractusx') {
       ],
     },
     orgs.newRepo('online-simulation-kit') {
+      archived: true,
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -502,6 +504,7 @@ orgs.newOrg('eclipse-tractusx') {
       },
     },
     orgs.newRepo('pcf-exchange-kit') {
+      archived: true,
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
