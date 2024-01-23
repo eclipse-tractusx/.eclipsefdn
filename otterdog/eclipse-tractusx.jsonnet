@@ -733,6 +733,7 @@ orgs.newOrg('eclipse-tractusx') {
       web_commit_signoff_required: false,
     },
     orgs.newRepo('traceability-foss') {
+      description: "https://eclipse-tractusx.github.io/traceability-foss/docs/",
       allow_merge_commit: true,
       allow_update_branch: false,
       gh_pages_build_type: "legacy",
