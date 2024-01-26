@@ -321,6 +321,7 @@ orgs.newOrg('eclipse-tractusx') {
       ],
     },
     orgs.newRepo('item-relationship-service') {
+      homepage: "https://eclipse-tractusx.github.io/item-relationship-service/docs/",
       allow_merge_commit: true,
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
