@@ -954,6 +954,10 @@ orgs.newOrg('eclipse-tractusx') {
         },
       ],
     },
+    orgs.newRepo('ssi-authority-schema-registry') {
+    },
+    orgs.newRepo('ssi-credential-issuer') {
+    },
     orgs.newRepo('ssi-docu') {
       allow_merge_commit: true,
       allow_update_branch: false,
