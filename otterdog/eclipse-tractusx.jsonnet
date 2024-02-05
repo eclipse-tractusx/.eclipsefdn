@@ -561,6 +561,9 @@ orgs.newOrg('eclipse-tractusx') {
         default_workflow_permissions: "write",
       },
       secrets: [
+        orgs.newRepoSecret('NUGET_API_KEY') {
+          value: "pass:bots/automotive.tractusx/nuget.org/api-token",
+        },
         orgs.newRepoSecret('SONAR_TOKEN') {
           value: "********",
         },
