@@ -592,6 +592,7 @@ orgs.newOrg('eclipse-tractusx') {
       ],
       environments: [
         orgs.newEnvironment('dev'),
+        orgs.newEnvironment('int'),
       ],
     },
     orgs.newRepo('portal-cd') {
