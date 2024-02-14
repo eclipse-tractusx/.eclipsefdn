@@ -832,6 +832,17 @@ orgs.newOrg('eclipse-tractusx') {
         default_workflow_permissions: "write",
       },
     },
+    orgs.newRepo('sig-testing') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
+      has_discussions: true,
+      web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+    },
     orgs.newRepo('sldt-bpn-discovery') {
       allow_merge_commit: true,
       allow_update_branch: false,
