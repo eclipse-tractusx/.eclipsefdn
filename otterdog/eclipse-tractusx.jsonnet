@@ -1098,6 +1098,8 @@ orgs.newOrg('eclipse-tractusx') {
         default_workflow_permissions: "write",
       },
     },
+    orgs.newRepo('ssi-sap-dim-middle-layer') {
+    },
     orgs.newRepo('testdata-provider') {
       allow_merge_commit: true,
       allow_update_branch: false,
