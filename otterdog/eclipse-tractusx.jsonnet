@@ -1125,7 +1125,7 @@ orgs.newOrg('eclipse-tractusx') {
             requires_strict_status_checks: true,
           },
         ],
-      }
+      },
     orgs.newRepo('tractusx-edc') {
       allow_merge_commit: true,
       allow_update_branch: false,
