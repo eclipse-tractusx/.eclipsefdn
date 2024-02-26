@@ -716,6 +716,9 @@ orgs.newOrg('eclipse-tractusx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
       description: "Predictive Unit Real-Time Information Service (PURIS) for Short Term Demand and Capacity Management",
       web_commit_signoff_required: false,
       workflows+: {
@@ -725,6 +728,14 @@ orgs.newOrg('eclipse-tractusx') {
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
           requires_strict_status_checks: true,
+        },
+      ],
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
         },
       ],
     },
