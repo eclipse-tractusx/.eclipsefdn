@@ -596,10 +596,11 @@ orgs.newOrg('eclipse-tractusx') {
         orgs.newEnvironment('int'),
       ],
     },
-    orgs.newRepo('portal-cd') {
+    orgs.newRepo('portal') {
+      aliases: ['portal-cd'],
       allow_merge_commit: true,
       allow_update_branch: false,
-      description: "Portal - Continuous Deployment",
+      description: "Portal - Helm charts",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
