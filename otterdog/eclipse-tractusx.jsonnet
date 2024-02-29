@@ -196,6 +196,7 @@ orgs.newOrg('eclipse-tractusx') {
       },
     },
     orgs.newRepo('tractus-x-umbrella') {
+      aliases: ['e2e-testing'],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
