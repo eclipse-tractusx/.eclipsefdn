@@ -195,7 +195,7 @@ orgs.newOrg('eclipse-tractusx') {
         default_workflow_permissions: "write",
       },
     },
-    orgs.newRepo('e2e-testing') {
+    orgs.newRepo('tractus-x-umbrella') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
