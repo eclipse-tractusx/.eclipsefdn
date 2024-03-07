@@ -512,7 +512,7 @@ orgs.newOrg('eclipse-tractusx') {
         },
       ],
     },
-    orgs.newRepo('ontology-models') {
+    orgs.newRepo('knowledge-agents-ontology') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
