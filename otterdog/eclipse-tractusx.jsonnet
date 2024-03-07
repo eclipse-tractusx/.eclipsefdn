@@ -1164,14 +1164,6 @@ orgs.newOrg('eclipse-tractusx') {
         delete_branch_on_merge: false,
         allow_merge_commit: false,
         has_discussions: false,
-        secrets : [
-          orgs.newRepoSecret('GPG_PASSPHRASE') {
-            value: "<NOT_SURE_WHAT_TO_PUT_HERE>",
-          },
-          orgs.newRepoSecret('GPG_PRIVATE_KEY') {
-            value: "<NOT_SURE_WHAT_TO_PUT_HERE>",
-          },
-        ]
     },
     orgs.newRepo('tractusx-edc-template'){
       is_template: true,
