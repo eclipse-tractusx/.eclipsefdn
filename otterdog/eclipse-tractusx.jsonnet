@@ -1159,6 +1159,12 @@ orgs.newOrg('eclipse-tractusx') {
         },
       ],
     },
+    orgs.newRepo('bpn-did-resolution-service') {
+        description: "Tractus-X Resolver Service for BPN <> DID resolution",
+        delete_branch_on_merge: false,
+        allow_merge_commit: false,
+        has_discussions: false,
+    },
     orgs.newRepo('tractusx-edc-template'){
       is_template: true,
       delete_branch_on_merge: false,
