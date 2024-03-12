@@ -144,6 +144,7 @@ orgs.newOrg('eclipse-tractusx') {
       ],
     },
     orgs.newRepo('daps-helm-chart') {
+      archived: true,
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -154,6 +155,7 @@ orgs.newOrg('eclipse-tractusx') {
       },
     },
     orgs.newRepo('daps-registration-service') {
+      archived: true,
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
