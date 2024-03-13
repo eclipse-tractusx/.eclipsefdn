@@ -500,10 +500,8 @@ orgs.newOrg('eclipse-tractusx') {
     orgs.newRepo('policy-hub') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
       description: "Policy Hub",
       private_vulnerability_reporting_enabled: true,
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
