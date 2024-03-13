@@ -501,7 +501,7 @@ orgs.newOrg('eclipse-tractusx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      description: "Policy hub",
+      description: "Policy Hub",
       private_vulnerability_reporting_enabled: true,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
@@ -519,6 +519,20 @@ orgs.newOrg('eclipse-tractusx') {
         },
         orgs.newRepoVariable('SONAR_PROJECT_KEY') {
           value: "eclipse-tractusx_policy-hub",
+        },
+      ],
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('dev') {
+          dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+        orgs.newBranchProtectionRule('main') {
+          dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
         },
       ],
     },
