@@ -500,14 +500,9 @@ orgs.newOrg('eclipse-tractusx') {
     orgs.newRepo('policy-hub') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
-      description: "Policy hub",
+      description: "Policy Hub",
       private_vulnerability_reporting_enabled: true,
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "write",
-      },
       secrets: [
         orgs.newRepoSecret('SONAR_TOKEN') {
           value: "pass:bots/automotive.tractusx/sonarcloud.io/token-policy-hub",
@@ -519,6 +514,20 @@ orgs.newOrg('eclipse-tractusx') {
         },
         orgs.newRepoVariable('SONAR_PROJECT_KEY') {
           value: "eclipse-tractusx_policy-hub",
+        },
+      ],
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('dev') {
+          dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+        orgs.newBranchProtectionRule('main') {
+          dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
         },
       ],
     },
@@ -998,10 +1007,32 @@ orgs.newOrg('eclipse-tractusx') {
       ],
     },
     orgs.newRepo('ssi-authority-schema-registry') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      description: "SSI Authority & Schema Registry",
       private_vulnerability_reporting_enabled: true,
+      web_commit_signoff_required: false,
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('dev') {
+          dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+        orgs.newBranchProtectionRule('main') {
+          dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+      ],
     },
     orgs.newRepo('ssi-credential-issuer') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      description: "SSI Credential Issuer",
       private_vulnerability_reporting_enabled: true,
+      web_commit_signoff_required: false,
       secrets: [
         orgs.newRepoSecret('SONAR_TOKEN') {
           value: "pass:bots/automotive.tractusx/sonarcloud.io/token-ssi-credential-issuer",
@@ -1013,6 +1044,20 @@ orgs.newOrg('eclipse-tractusx') {
         },
         orgs.newRepoVariable('SONAR_PROJECT_KEY') {
           value: "eclipse-tractusx_ssi-credential-issuer",
+        },
+      ],
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('dev') {
+          dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+        orgs.newBranchProtectionRule('main') {
+          dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
         },
       ],
     },
