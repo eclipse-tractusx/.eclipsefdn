@@ -503,9 +503,6 @@ orgs.newOrg('eclipse-tractusx') {
       description: "Policy Hub",
       private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "write",
-      },
       secrets: [
         orgs.newRepoSecret('SONAR_TOKEN') {
           value: "pass:bots/automotive.tractusx/sonarcloud.io/token-policy-hub",
@@ -1015,9 +1012,6 @@ orgs.newOrg('eclipse-tractusx') {
       description: "SSI Authority & Schema Registry",
       private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "write",
-      },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('dev') {
           dismisses_stale_reviews: true,
@@ -1039,9 +1033,6 @@ orgs.newOrg('eclipse-tractusx') {
       description: "SSI Credential Issuer",
       private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "write",
-      },
       secrets: [
         orgs.newRepoSecret('SONAR_TOKEN') {
           value: "pass:bots/automotive.tractusx/sonarcloud.io/token-ssi-credential-issuer",
