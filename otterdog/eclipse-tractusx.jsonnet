@@ -119,6 +119,9 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('bpn-did-resolution-service') {
       delete_branch_on_merge: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
       description: "Tractus-X Resolver Service for BPN <> DID resolution",
       private_vulnerability_reporting_enabled: true,
     },
