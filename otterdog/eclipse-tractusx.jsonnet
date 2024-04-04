@@ -7,7 +7,6 @@ orgs.newOrg('eclipse-tractusx') {
     name: "Eclipse Tractus-X",
     packages_containers_internal: false,
     packages_containers_public: false,
-    readers_can_create_discussions: true,
     security_managers+: [
       "automotive-tractusx-committers"
     ],
