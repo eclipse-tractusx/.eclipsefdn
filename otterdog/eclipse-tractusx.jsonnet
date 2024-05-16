@@ -1304,6 +1304,18 @@ orgs.newOrg('eclipse-tractusx') {
         },
       ],
     },
+    orgs.newRepo('emergingtechnologies') {
+      delete_branch_on_merge: true,
+      is_template: true,
+      private_vulnerability_reporting_enabled: true,
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+      ],
+    },
     orgs.newRepo('tractusx-profiles') {
       allow_merge_commit: true,
       allow_update_branch: false,
