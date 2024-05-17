@@ -1306,7 +1306,7 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('emergingtechnologies') {
       delete_branch_on_merge: true,
-      is_template: true,
+      is_template: false,
       private_vulnerability_reporting_enabled: true,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
