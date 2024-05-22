@@ -271,7 +271,6 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('eco-pass-kit') {
       archived: true,
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -771,7 +770,6 @@ orgs.newOrg('eclipse-tractusx') {
     orgs.newRepo('puris-backend') {
       archived: true,
       description: "puris-backend",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -780,7 +778,6 @@ orgs.newOrg('eclipse-tractusx') {
     orgs.newRepo('puris-frontend') {
       archived: true,
       description: "puris-frontend",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -1162,7 +1159,6 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
