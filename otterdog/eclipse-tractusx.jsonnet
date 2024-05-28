@@ -64,6 +64,8 @@ orgs.newOrg('eclipse-tractusx') {
     orgs.newOrgSecret('HELM_PASSWORD') {
       value: "pass:bots/automotive.tractusx/repo3.eclipse.org/token-password",
     },
+  ],
+  variables+: [
     orgs.newOrgVariable('HELM_REPO') {
       value: "https://repo3.eclipse.org/repository/helm-tractusx/",
     },
