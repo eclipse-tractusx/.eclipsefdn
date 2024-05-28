@@ -67,10 +67,10 @@ orgs.newOrg('eclipse-tractusx') {
   ],
   variables+: [
     orgs.newOrgVariable('HELM_REPO') {
-      value: "https://repo3.eclipse.org/repository/helm-tractusx/",
+      value: "https://repo3.eclipse.org/repository/tractusx-helm-releases/",
     },
     orgs.newOrgVariable('HELM_REPO_STAGING') {
-      value: "https://repo3.eclipse.org/repository/helm-tractusx-staging/",
+      value: "https://repo3.eclipse.org/repository/tractusx-helm-staging/",
     },
   ],
   _repositories+:: [
