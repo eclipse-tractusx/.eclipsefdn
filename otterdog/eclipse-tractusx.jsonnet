@@ -58,6 +58,18 @@ orgs.newOrg('eclipse-tractusx') {
     orgs.newOrgSecret('VERACODE_API_KEY') {
       value: "pass:bots/automotive.tractusx/veracode.com/api-key",
     },
+    orgs.newOrgSecret('HELM_USER') {
+      value: "pass:bots/automotive.tractusx/repo3.eclipse.org/token-username",
+    },
+    orgs.newOrgSecret('HELM_PASSWORD') {
+      value: "pass:bots/automotive.tractusx/repo3.eclipse.org/token-password",
+    },
+    orgs.newOrgVariable('HELM_REPO') {
+      value: "https://repo3.eclipse.org/repository/helm-tractusx/",
+    },
+    orgs.newOrgVariable('HELM_REPO_STAGING') {
+      value: "https://repo3.eclipse.org/repository/helm-tractusx-staging/",
+    },
   ],
   _repositories+:: [
     orgs.extendRepo('.eclipsefdn') {
