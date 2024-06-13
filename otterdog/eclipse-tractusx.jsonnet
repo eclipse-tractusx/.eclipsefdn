@@ -1105,6 +1105,19 @@ orgs.newOrg('eclipse-tractusx') {
           requires_strict_status_checks: true,
         },
       ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/automotive.tractusx/sonarcloud.io/token-ssi-authority-schema-registry",
+        },
+      ],
+      variables: [
+        orgs.newRepoVariable('SONAR_ORGANIZATION') {
+          value: "eclipse-tractusx",
+        },
+        orgs.newRepoVariable('SONAR_PROJECT_KEY') {
+          value: "eclipse-tractusx_ssi-authority-schema-registry",
+        },
+      ],
     },
     orgs.newRepo('ssi-credential-issuer') {
       allow_merge_commit: true,
