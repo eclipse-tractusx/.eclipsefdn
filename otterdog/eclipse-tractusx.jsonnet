@@ -35,10 +35,10 @@ orgs.newOrg('eclipse-tractusx') {
       value: "pass:bots/automotive.tractusx/gpg/secret-subkeys.asc",
     },
     orgs.newOrgSecret('ORG_OSSRH_PASSWORD') {
-      value: "pass:bots/automotive.tractusx/oss.sonatype.org/password",
+      value: "pass:bots/automotive.tractusx/oss.sonatype.org/gh-token-password",
     },
     orgs.newOrgSecret('ORG_OSSRH_USERNAME') {
-      value: "pass:bots/automotive.tractusx/oss.sonatype.org/username",
+      value: "pass:bots/automotive.tractusx/oss.sonatype.org/gh-token-username",
     },
     orgs.newOrgSecret('ORG_PORTAL_DISPATCH_APPID') {
       value: "pass:bots/automotive.tractusx/github.com/github-app-id",
