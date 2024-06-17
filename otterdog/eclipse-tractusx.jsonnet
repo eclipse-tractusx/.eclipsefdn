@@ -1091,6 +1091,19 @@ orgs.newOrg('eclipse-tractusx') {
       description: "SSI Authority & Schema Registry",
       private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/automotive.tractusx/sonarcloud.io/token-ssi-authority-schema-registry",
+        },
+      ],
+      variables: [
+        orgs.newRepoVariable('SONAR_ORGANIZATION') {
+          value: "eclipse-tractusx",
+        },
+        orgs.newRepoVariable('SONAR_PROJECT_KEY') {
+          value: "eclipse-tractusx_ssi-authority-schema-registry",
+        },
+      ],
       branch_protection_rules: [
         orgs.newBranchProtectionRule('dev') {
           dismisses_stale_reviews: true,
@@ -1103,19 +1116,6 @@ orgs.newOrg('eclipse-tractusx') {
           required_approving_review_count: 1,
           requires_status_checks: false,
           requires_strict_status_checks: true,
-        },
-      ],
-      secrets: [
-        orgs.newRepoSecret('SONAR_TOKEN') {
-          value: "pass:bots/automotive.tractusx/sonarcloud.io/token-ssi-authority-schema-registry",
-        },
-      ],
-      variables: [
-        orgs.newRepoVariable('SONAR_ORGANIZATION') {
-          value: "eclipse-tractusx",
-        },
-        orgs.newRepoVariable('SONAR_PROJECT_KEY') {
-          value: "eclipse-tractusx_ssi-authority-schema-registry",
         },
       ],
     },
@@ -1187,10 +1187,43 @@ orgs.newOrg('eclipse-tractusx') {
         default_workflow_permissions: "write",
       },
       secrets: [
+        orgs.newRepoSecret('ORG_IRS_JIRA_PASSWORD') {
+          value: "********",
+        },
+        orgs.newRepoSecret('ORG_IRS_JIRA_USERNAME') {
+          value: "********",
+        },
         orgs.newRepoSecret('SONAR_TOKEN_BACKEND') {
           value: "********",
         },
         orgs.newRepoSecret('SONAR_TOKEN_FRONTEND') {
+          value: "********",
+        },
+        orgs.newRepoSecret('TRACE_X_ADMIN_LOGIN') {
+          value: "********",
+        },
+        orgs.newRepoSecret('TRACE_X_ADMIN_PW') {
+          value: "********",
+        },
+        orgs.newRepoSecret('TRACE_X_API_KEY_DEV') {
+          value: "********",
+        },
+        orgs.newRepoSecret('TRACE_X_API_KEY_INT_A') {
+          value: "********",
+        },
+        orgs.newRepoSecret('TRACE_X_API_KEY_INT_B') {
+          value: "********",
+        },
+        orgs.newRepoSecret('TRACE_X_SUPERVISOR_LOGIN') {
+          value: "********",
+        },
+        orgs.newRepoSecret('TRACE_X_SUPERVISOR_PW') {
+          value: "********",
+        },
+        orgs.newRepoSecret('TRACE_X_USER_LOGIN') {
+          value: "********",
+        },
+        orgs.newRepoSecret('TRACE_X_USER_PW') {
           value: "********",
         },
       ],
