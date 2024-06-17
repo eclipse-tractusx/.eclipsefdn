@@ -1187,6 +1187,15 @@ orgs.newOrg('eclipse-tractusx') {
         default_workflow_permissions: "write",
       },
       secrets: [
+        orgs.newRepoSecret('E2E_TXA_HOST') {
+          value: "********",
+        },
+        orgs.newRepoSecret('E2E_TXB_HOST') {
+          value: "********",
+        },
+        orgs.newRepoSecret('KEYCLOAK_HOST') {
+          value: "********",
+        },
         orgs.newRepoSecret('ORG_IRS_JIRA_PASSWORD') {
           value: "********",
         },
@@ -1197,6 +1206,12 @@ orgs.newOrg('eclipse-tractusx') {
           value: "********",
         },
         orgs.newRepoSecret('SONAR_TOKEN_FRONTEND') {
+          value: "********",
+        },
+        orgs.newRepoSecret('SUPERVISOR_CLIENT_ID') {
+          value: "********",
+        },
+        orgs.newRepoSecret('SUPERVISOR_PASSWORD') {
           value: "********",
         },
         orgs.newRepoSecret('TRACE_X_ADMIN_LOGIN') {
