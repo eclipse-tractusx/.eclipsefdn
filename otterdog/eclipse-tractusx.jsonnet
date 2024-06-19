@@ -368,6 +368,12 @@ orgs.newOrg('eclipse-tractusx') {
         orgs.newRepoSecret('DEV_REGULAR_USER_API_KEY') {
           value: "********",
         },
+        orgs.newRepoSecret('INT_ADMIN_USER_API_KEY') {
+          value: "********",
+        },
+        orgs.newRepoSecret('INT_REGULAR_USER_API_KEY') {
+          value: "********",
+        },
         orgs.newRepoSecret('IRS_CUCUMBER_PUBLISH_TOKEN') {
           value: "********",
         },
