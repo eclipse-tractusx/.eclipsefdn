@@ -7,7 +7,6 @@ orgs.newOrg('eclipse-tractusx') {
     name: "Eclipse Tractus-X",
     packages_containers_internal: false,
     packages_containers_public: false,
-    readers_can_create_discussions: true,
     security_managers+: [
       "automotive-tractusx-committers"
     ],
@@ -23,6 +22,12 @@ orgs.newOrg('eclipse-tractusx') {
     orgs.newOrgSecret('DOCKER_HUB_USER') {
       value: "pass:bots/automotive.tractusx/docker.com/username",
     },
+    orgs.newOrgSecret('HELM_PASSWORD') {
+      value: "pass:bots/automotive.tractusx/repo3.eclipse.org/token-password",
+    },
+    orgs.newOrgSecret('HELM_USER') {
+      value: "pass:bots/automotive.tractusx/repo3.eclipse.org/token-username",
+    },
     orgs.newOrgSecret('ORG_GPG_PASSPHRASE') {
       value: "pass:bots/automotive.tractusx/gpg/passphrase",
     },
@@ -30,10 +35,10 @@ orgs.newOrg('eclipse-tractusx') {
       value: "pass:bots/automotive.tractusx/gpg/secret-subkeys.asc",
     },
     orgs.newOrgSecret('ORG_OSSRH_PASSWORD') {
-      value: "pass:bots/automotive.tractusx/oss.sonatype.org/password",
+      value: "pass:bots/automotive.tractusx/oss.sonatype.org/gh-token-password",
     },
     orgs.newOrgSecret('ORG_OSSRH_USERNAME') {
-      value: "pass:bots/automotive.tractusx/oss.sonatype.org/username",
+      value: "pass:bots/automotive.tractusx/oss.sonatype.org/gh-token-username",
     },
     orgs.newOrgSecret('ORG_PORTAL_DISPATCH_APPID') {
       value: "pass:bots/automotive.tractusx/github.com/github-app-id",
@@ -60,11 +65,23 @@ orgs.newOrg('eclipse-tractusx') {
       value: "pass:bots/automotive.tractusx/veracode.com/api-key",
     },
   ],
+  variables+: [
+    orgs.newOrgVariable('HELM_REPO') {
+      value: "https://repo3.eclipse.org/repository/tractusx-helm-releases/",
+    },
+    orgs.newOrgVariable('HELM_REPO_STAGING') {
+      value: "https://repo3.eclipse.org/repository/tractusx-helm-staging/",
+    },
+  ],
   _repositories+:: [
+    orgs.extendRepo('.eclipsefdn') {
+      private_vulnerability_reporting_enabled: true,
+    },
     orgs.newRepo('.github') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -74,25 +91,40 @@ orgs.newOrg('eclipse-tractusx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
       },
+    },
+    orgs.newRepo('api-hub') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
+      homepage: "https://eclipse-tractusx.github.io/api-hub",
+      private_vulnerability_reporting_enabled: true,
+      web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
     orgs.newRepo('app-dashboard') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "app-dashboard",
-      web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "write",
-      },
-    },
-    orgs.newRepo('asset-tracking-platform') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -103,6 +135,7 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "bpdm",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -113,10 +146,50 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "reference implementation for business partner certificates",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
       },
+    },
+    orgs.newRepo('bpdm-upload-tool') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
+      has_discussions: true,
+      private_vulnerability_reporting_enabled: true,
+      web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
+    },
+    orgs.newRepo('bpn-did-resolution-service') {
+      allow_merge_commit: true,
+      delete_branch_on_merge: false,
+      description: "Tractus-X Resolver Service for BPN <> DID resolution",
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
+      private_vulnerability_reporting_enabled: true,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
     orgs.newRepo('charts') {
       allow_merge_commit: true,
@@ -125,6 +198,7 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "main",
       gh_pages_source_path: "/",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -139,18 +213,16 @@ orgs.newOrg('eclipse-tractusx') {
       ],
     },
     orgs.newRepo('daps-helm-chart') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
+      archived: true,
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
       },
     },
     orgs.newRepo('daps-registration-service') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
+      archived: true,
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -163,6 +235,7 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -180,6 +253,7 @@ orgs.newOrg('eclipse-tractusx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -190,31 +264,11 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "digital product pass",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
       },
-    },
-    orgs.newRepo('e2e-testing') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
-      gh_pages_build_type: "legacy",
-      gh_pages_source_branch: "main",
-      gh_pages_source_path: "/",
-      has_discussions: true,
-      web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "write",
-      },
-      environments: [
-        orgs.newEnvironment('github-pages') {
-          branch_policies+: [
-            "main"
-          ],
-          deployment_branch_policy: "selected",
-        },
-      ],
     },
     orgs.newRepo('eclipse-tractusx.github.io') {
       allow_merge_commit: true,
@@ -224,13 +278,14 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_path: "/",
       has_discussions: true,
       homepage: "https://eclipse-tractusx.github.io/",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
       },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
-        dismisses_stale_reviews: true,
+          dismisses_stale_reviews: true,
         },
       ],
       environments: [
@@ -246,6 +301,7 @@ orgs.newOrg('eclipse-tractusx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -253,31 +309,19 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('eco-pass-kit') {
       archived: true,
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
       },
     },
-    orgs.newRepo('esc-backbone') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
-      gh_pages_build_type: "legacy",
-      gh_pages_source_branch: "gh-pages",
-      gh_pages_source_path: "/",
-      web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "write",
-      },
-      environments: [
-        orgs.newEnvironment('github-pages') {
-          branch_policies+: [
-            "gh-pages"
-          ],
-          deployment_branch_policy: "selected",
+    orgs.newRepo('emergingtechnologies') {
+      private_vulnerability_reporting_enabled: true,
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
         },
       ],
     },
@@ -289,28 +333,11 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       has_discussions: true,
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
       },
-      environments: [
-        orgs.newEnvironment('github-pages') {
-          branch_policies+: [
-            "gh-pages"
-          ],
-          deployment_branch_policy: "selected",
-        },
-      ],
-    },
-    orgs.newRepo('tractusx-profiles') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
-      gh_pages_build_type: "legacy",
-      gh_pages_source_branch: "gh-pages",
-      gh_pages_source_path: "/",
-      has_discussions: true,
-      web_commit_signoff_required: false,
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -321,7 +348,6 @@ orgs.newOrg('eclipse-tractusx') {
       ],
     },
     orgs.newRepo('item-relationship-service') {
-      homepage: "https://eclipse-tractusx.github.io/item-relationship-service/docs/",
       allow_merge_commit: true,
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
@@ -329,11 +355,28 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       has_discussions: true,
+      homepage: "https://eclipse-tractusx.github.io/item-relationship-service/docs/",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
       },
       secrets: [
+        orgs.newRepoSecret('DEV_ADMIN_USER_API_KEY') {
+          value: "********",
+        },
+        orgs.newRepoSecret('DEV_REGULAR_USER_API_KEY') {
+          value: "********",
+        },
+        orgs.newRepoSecret('INT_ADMIN_USER_API_KEY') {
+          value: "********",
+        },
+        orgs.newRepoSecret('INT_REGULAR_USER_API_KEY') {
+          value: "********",
+        },
+        orgs.newRepoSecret('IRS_CUCUMBER_PUBLISH_TOKEN') {
+          value: "********",
+        },
         orgs.newRepoSecret('SONAR_ORGANIZATION') {
           value: "********",
         },
@@ -365,6 +408,7 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "Reference Implementations of CX-0084 (Federated Queries In Data Spaces)",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -374,6 +418,7 @@ orgs.newOrg('eclipse-tractusx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -384,10 +429,32 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "EDC Extensions for CX-0084 (Federated Queries In Data Spaces)",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
       },
+    },
+    orgs.newRepo('knowledge-agents-ontology') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
+      private_vulnerability_reporting_enabled: true,
+      web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
     orgs.newRepo('managed-identity-wallet') {
       allow_merge_commit: true,
@@ -397,6 +464,7 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       has_discussions: true,
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -411,13 +479,12 @@ orgs.newOrg('eclipse-tractusx') {
       ],
     },
     orgs.newRepo('managed-identity-wallets-archived') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
+      archived: true,
       description: "managed-identity-wallets",
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -438,6 +505,7 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -458,6 +526,7 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "main",
       gh_pages_source_path: "/",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -478,6 +547,7 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -498,6 +568,7 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -514,13 +585,9 @@ orgs.newOrg('eclipse-tractusx') {
     orgs.newRepo('policy-hub') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
-      description: "Policy hub",
-      secret_scanning_push_protection: "disabled",
+      description: "Policy Hub",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "write",
-      },
       secrets: [
         orgs.newRepoSecret('SONAR_TOKEN') {
           value: "pass:bots/automotive.tractusx/sonarcloud.io/token-policy-hub",
@@ -534,11 +601,50 @@ orgs.newOrg('eclipse-tractusx') {
           value: "eclipse-tractusx_policy-hub",
         },
       ],
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('dev') {
+          dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+        orgs.newBranchProtectionRule('main') {
+          dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+      ],
+    },
+    orgs.newRepo('portal') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      description: "Portal - Helm charts",
+      private_vulnerability_reporting_enabled: true,
+      web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('dev') {
+          required_approving_review_count: null,
+          requires_pull_request: false,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+        orgs.newBranchProtectionRule('main') {
+          dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+      ],
     },
     orgs.newRepo('portal-assets') {
       allow_merge_commit: true,
       allow_update_branch: false,
       description: "Portal Assets",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -556,6 +662,7 @@ orgs.newOrg('eclipse-tractusx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       description: "Portal Backend",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -595,33 +702,11 @@ orgs.newOrg('eclipse-tractusx') {
         orgs.newEnvironment('int'),
       ],
     },
-    orgs.newRepo('portal-cd') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      description: "Portal - Continuous Deployment",
-      web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "write",
-      },
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('dev') {
-          required_approving_review_count: null,
-          requires_pull_request: false,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
-        orgs.newBranchProtectionRule('main') {
-          dismisses_stale_reviews: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
-      ],
-    },
     orgs.newRepo('portal-frontend') {
       allow_merge_commit: true,
       allow_update_branch: false,
       description: "Portal Frontend",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -645,6 +730,7 @@ orgs.newOrg('eclipse-tractusx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       description: "Portal Frontend Registration",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -668,6 +754,7 @@ orgs.newOrg('eclipse-tractusx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       description: "IAM - Keycloak instances",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -686,6 +773,7 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       description: "Portal Shared UI Components",
       gh_pages_build_type: "workflow",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -717,6 +805,10 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
       description: "Predictive Unit Real-Time Information Service (PURIS) for Short Term Demand and Capacity Management",
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -734,10 +826,17 @@ orgs.newOrg('eclipse-tractusx') {
           ]
         },
       ],
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
     orgs.newRepo('puris-backend') {
       archived: true,
-      dependabot_alerts_enabled: false,
       description: "puris-backend",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
@@ -747,7 +846,6 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('puris-frontend') {
       archived: true,
-      dependabot_alerts_enabled: false,
       description: "puris-frontend",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
@@ -759,6 +857,7 @@ orgs.newOrg('eclipse-tractusx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -771,6 +870,7 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -789,6 +889,7 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       has_discussions: true,
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -804,6 +905,7 @@ orgs.newOrg('eclipse-tractusx') {
       has_discussions: true,
       has_projects: false,
       homepage: "https://eclipse-tractusx.github.io/sig-release",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -834,6 +936,7 @@ orgs.newOrg('eclipse-tractusx') {
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       has_discussions: true,
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -845,6 +948,7 @@ orgs.newOrg('eclipse-tractusx') {
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       has_discussions: true,
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -857,6 +961,7 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -882,10 +987,24 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
       },
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/automotive.tractusx/sonarcloud.io/token-tractusx_sldt-digital-twin-registry",
+        },
+      ],
+      variables: [
+        orgs.newRepoVariable('SONAR_ORGANIZATION') {
+          value: "eclipse-tractusx",
+        },
+        orgs.newRepoVariable('SONAR_PROJECT_KEY') {
+          value: "eclipse-tractusx_sldt-digital-twin-registry",
+        },
+      ],
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -902,6 +1021,7 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -927,6 +1047,7 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -945,6 +1066,7 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "sldt-semantic-models",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -977,14 +1099,77 @@ orgs.newOrg('eclipse-tractusx') {
       ],
     },
     orgs.newRepo('ssi-authority-schema-registry') {
-    },
-    orgs.newRepo('ssi-credential-issuer') {
-    },
-    orgs.newRepo('ssi-docu') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
+      description: "SSI Authority & Schema Registry",
+      private_vulnerability_reporting_enabled: true,
+      web_commit_signoff_required: false,
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/automotive.tractusx/sonarcloud.io/token-ssi-authority-schema-registry",
+        },
+      ],
+      variables: [
+        orgs.newRepoVariable('SONAR_ORGANIZATION') {
+          value: "eclipse-tractusx",
+        },
+        orgs.newRepoVariable('SONAR_PROJECT_KEY') {
+          value: "eclipse-tractusx_ssi-authority-schema-registry",
+        },
+      ],
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('dev') {
+          dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+        orgs.newBranchProtectionRule('main') {
+          dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+      ],
+    },
+    orgs.newRepo('ssi-credential-issuer') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      description: "SSI Credential Issuer",
+      private_vulnerability_reporting_enabled: true,
+      web_commit_signoff_required: false,
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/automotive.tractusx/sonarcloud.io/token-ssi-credential-issuer",
+        },
+      ],
+      variables: [
+        orgs.newRepoVariable('SONAR_ORGANIZATION') {
+          value: "eclipse-tractusx",
+        },
+        orgs.newRepoVariable('SONAR_PROJECT_KEY') {
+          value: "eclipse-tractusx_ssi-credential-issuer",
+        },
+      ],
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('dev') {
+          dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+        orgs.newBranchProtectionRule('main') {
+          dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+      ],
+    },
+    orgs.newRepo('ssi-docu') {
+      archived: true,
       has_discussions: true,
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -995,28 +1180,78 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "Testdata Provider",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
       },
     },
     orgs.newRepo('traceability-foss') {
-      homepage: "https://eclipse-tractusx.github.io/traceability-foss/docs/",
       allow_merge_commit: true,
       allow_update_branch: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       has_discussions: true,
+      homepage: "https://eclipse-tractusx.github.io/traceability-foss/docs/",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
       },
       secrets: [
+        orgs.newRepoSecret('E2E_TXA_HOST') {
+          value: "********",
+        },
+        orgs.newRepoSecret('E2E_TXB_HOST') {
+          value: "********",
+        },
+        orgs.newRepoSecret('KEYCLOAK_HOST') {
+          value: "********",
+        },
+        orgs.newRepoSecret('ORG_IRS_JIRA_PASSWORD') {
+          value: "********",
+        },
+        orgs.newRepoSecret('ORG_IRS_JIRA_USERNAME') {
+          value: "********",
+        },
         orgs.newRepoSecret('SONAR_TOKEN_BACKEND') {
           value: "********",
         },
         orgs.newRepoSecret('SONAR_TOKEN_FRONTEND') {
+          value: "********",
+        },
+        orgs.newRepoSecret('SUPERVISOR_CLIENT_ID') {
+          value: "********",
+        },
+        orgs.newRepoSecret('SUPERVISOR_PASSWORD') {
+          value: "********",
+        },
+        orgs.newRepoSecret('TRACE_X_ADMIN_LOGIN') {
+          value: "********",
+        },
+        orgs.newRepoSecret('TRACE_X_ADMIN_PW') {
+          value: "********",
+        },
+        orgs.newRepoSecret('TRACE_X_API_KEY_DEV') {
+          value: "********",
+        },
+        orgs.newRepoSecret('TRACE_X_API_KEY_INT_A') {
+          value: "********",
+        },
+        orgs.newRepoSecret('TRACE_X_API_KEY_INT_B') {
+          value: "********",
+        },
+        orgs.newRepoSecret('TRACE_X_SUPERVISOR_LOGIN') {
+          value: "********",
+        },
+        orgs.newRepoSecret('TRACE_X_SUPERVISOR_PW') {
+          value: "********",
+        },
+        orgs.newRepoSecret('TRACE_X_USER_LOGIN') {
+          value: "********",
+        },
+        orgs.newRepoSecret('TRACE_X_USER_PW') {
           value: "********",
         },
       ],
@@ -1049,7 +1284,6 @@ orgs.newOrg('eclipse-tractusx') {
     },
     orgs.newRepo('traceability-foss-backend') {
       archived: true,
-      dependabot_alerts_enabled: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
@@ -1094,6 +1328,7 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -1107,6 +1342,28 @@ orgs.newOrg('eclipse-tractusx') {
         },
       ],
     },
+    orgs.newRepo('tractus-x-umbrella') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "main",
+      gh_pages_source_path: "/",
+      has_discussions: true,
+      private_vulnerability_reporting_enabled: true,
+      web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "main"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
+    },
     orgs.newRepo('tractusx-edc') {
       allow_merge_commit: true,
       allow_update_branch: false,
@@ -1115,6 +1372,7 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       has_discussions: true,
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -1159,10 +1417,40 @@ orgs.newOrg('eclipse-tractusx') {
         },
       ],
     },
-    orgs.newRepo('tractusx-quality-checks') {
+    orgs.newRepo('tractusx-edc-template') {
+      delete_branch_on_merge: false,
+      is_template: true,
+      private_vulnerability_reporting_enabled: true,
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+      ],
+    },
+    orgs.newRepo('tractusx-profiles') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
+      has_discussions: true,
+      private_vulnerability_reporting_enabled: true,
+      web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
+    },
+    orgs.newRepo('tractusx-quality-checks') {
+      archived: true,
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -1176,6 +1464,7 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       has_discussions: true,
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -1196,6 +1485,7 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -1213,6 +1503,7 @@ orgs.newOrg('eclipse-tractusx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",

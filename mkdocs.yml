@@ -30,13 +30,12 @@ plugins:
 
 nav:
   - Overview: index.md
-  - configuration.md
   - playground.md
 
-not_in_nav: |
-  repo-*.md
-
 watch: []
+
+extra:
+  org_id: eclipse-tractusx
 
 extra_css:
   - stylesheets/extra.css
