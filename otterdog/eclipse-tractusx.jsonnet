@@ -816,7 +816,15 @@ orgs.newOrg('eclipse-tractusx') {
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
-          requires_strict_status_checks: true,
+          required_status_checks+: [
+            "docker-frontend",
+            "docker-backend",
+            "Analyze CodeQl",
+            "Analyze KICS",
+            "check-dependencies-frontend",
+            "check-dependencies-backend",
+            "Check quality guidelines / Check quality guidelines"
+          ]
         },
       ],
       environments: [
