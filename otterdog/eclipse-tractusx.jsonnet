@@ -602,12 +602,6 @@ orgs.newOrg('eclipse-tractusx') {
         },
       ],
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('dev') {
-          dismisses_stale_reviews: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
         orgs.newBranchProtectionRule('main') {
           dismisses_stale_reviews: true,
           required_approving_review_count: 1,
@@ -625,20 +619,6 @@ orgs.newOrg('eclipse-tractusx') {
       workflows+: {
         default_workflow_permissions: "write",
       },
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('dev') {
-          required_approving_review_count: null,
-          requires_pull_request: false,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
-        orgs.newBranchProtectionRule('main') {
-          dismisses_stale_reviews: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
-      ],
     },
     orgs.newRepo('portal-assets') {
       allow_merge_commit: true,
@@ -684,12 +664,6 @@ orgs.newOrg('eclipse-tractusx') {
         },
       ],
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('dev') {
-          dismisses_stale_reviews: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
         orgs.newBranchProtectionRule('main') {
           dismisses_stale_reviews: true,
           required_approving_review_count: 1,
@@ -712,12 +686,6 @@ orgs.newOrg('eclipse-tractusx') {
         default_workflow_permissions: "write",
       },
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('dev') {
-          dismisses_stale_reviews: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
         orgs.newBranchProtectionRule('main') {
           dismisses_stale_reviews: true,
           required_approving_review_count: 1,
@@ -736,12 +704,6 @@ orgs.newOrg('eclipse-tractusx') {
         default_workflow_permissions: "write",
       },
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('dev') {
-          dismisses_stale_reviews: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
         orgs.newBranchProtectionRule('main') {
           dismisses_stale_reviews: true,
           required_approving_review_count: 1,
@@ -1118,12 +1080,6 @@ orgs.newOrg('eclipse-tractusx') {
         },
       ],
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('dev') {
-          dismisses_stale_reviews: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
         orgs.newBranchProtectionRule('main') {
           dismisses_stale_reviews: true,
           required_approving_review_count: 1,
@@ -1152,12 +1108,6 @@ orgs.newOrg('eclipse-tractusx') {
         },
       ],
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('dev') {
-          dismisses_stale_reviews: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
         orgs.newBranchProtectionRule('main') {
           dismisses_stale_reviews: true,
           required_approving_review_count: 1,
