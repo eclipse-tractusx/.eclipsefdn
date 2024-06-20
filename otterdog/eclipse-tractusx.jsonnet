@@ -734,6 +734,7 @@ orgs.newOrg('eclipse-tractusx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       description: "Portal Shared UI Components",
+      homepage: "https://eclipse-tractusx.github.io/portal-shared-components",
       gh_pages_build_type: "workflow",
       private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
