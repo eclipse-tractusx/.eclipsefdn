@@ -671,10 +671,6 @@ orgs.newOrg('eclipse-tractusx') {
           requires_strict_status_checks: true,
         },
       ],
-      environments: [
-        orgs.newEnvironment('dev'),
-        orgs.newEnvironment('int'),
-      ],
     },
     orgs.newRepo('portal-frontend') {
       allow_merge_commit: true,
