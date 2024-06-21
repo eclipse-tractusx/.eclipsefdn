@@ -619,6 +619,12 @@ orgs.newOrg('eclipse-tractusx') {
       workflows+: {
         default_workflow_permissions: "write",
       },
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          requires_pull_request: false,
+          requires_status_checks: false,
+        },
+      ],
     },
     orgs.newRepo('portal-assets') {
       allow_merge_commit: true,
