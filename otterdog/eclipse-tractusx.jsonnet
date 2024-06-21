@@ -602,12 +602,6 @@ orgs.newOrg('eclipse-tractusx') {
         },
       ],
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('dev') {
-          dismisses_stale_reviews: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
         orgs.newBranchProtectionRule('main') {
           dismisses_stale_reviews: true,
           required_approving_review_count: 1,
@@ -626,17 +620,9 @@ orgs.newOrg('eclipse-tractusx') {
         default_workflow_permissions: "write",
       },
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('dev') {
-          required_approving_review_count: null,
+        orgs.newBranchProtectionRule('main') {
           requires_pull_request: false,
           requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
-        orgs.newBranchProtectionRule('main') {
-          dismisses_stale_reviews: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
         },
       ],
     },
@@ -684,22 +670,12 @@ orgs.newOrg('eclipse-tractusx') {
         },
       ],
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('dev') {
-          dismisses_stale_reviews: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
         orgs.newBranchProtectionRule('main') {
           dismisses_stale_reviews: true,
           required_approving_review_count: 1,
           requires_status_checks: false,
           requires_strict_status_checks: true,
         },
-      ],
-      environments: [
-        orgs.newEnvironment('dev'),
-        orgs.newEnvironment('int'),
       ],
     },
     orgs.newRepo('portal-frontend') {
@@ -712,12 +688,6 @@ orgs.newOrg('eclipse-tractusx') {
         default_workflow_permissions: "write",
       },
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('dev') {
-          dismisses_stale_reviews: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
         orgs.newBranchProtectionRule('main') {
           dismisses_stale_reviews: true,
           required_approving_review_count: 1,
@@ -736,12 +706,6 @@ orgs.newOrg('eclipse-tractusx') {
         default_workflow_permissions: "write",
       },
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('dev') {
-          dismisses_stale_reviews: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
         orgs.newBranchProtectionRule('main') {
           dismisses_stale_reviews: true,
           required_approving_review_count: 1,
@@ -772,6 +736,7 @@ orgs.newOrg('eclipse-tractusx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       description: "Portal Shared UI Components",
+      homepage: "https://eclipse-tractusx.github.io/portal-shared-components",
       gh_pages_build_type: "workflow",
       private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
@@ -1118,12 +1083,6 @@ orgs.newOrg('eclipse-tractusx') {
         },
       ],
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('dev') {
-          dismisses_stale_reviews: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
         orgs.newBranchProtectionRule('main') {
           dismisses_stale_reviews: true,
           required_approving_review_count: 1,
@@ -1152,12 +1111,6 @@ orgs.newOrg('eclipse-tractusx') {
         },
       ],
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('dev') {
-          dismisses_stale_reviews: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
         orgs.newBranchProtectionRule('main') {
           dismisses_stale_reviews: true,
           required_approving_review_count: 1,
