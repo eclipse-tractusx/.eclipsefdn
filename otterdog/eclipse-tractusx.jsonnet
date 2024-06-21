@@ -819,7 +819,6 @@ orgs.newOrg('eclipse-tractusx') {
           required_status_checks+: [
             "docker-frontend",
             "docker-backend",
-            "CodeQl / Analyze CodeQl",
             "Analyze KICS",
             "check-dependencies-frontend",
             "check-dependencies-backend",
