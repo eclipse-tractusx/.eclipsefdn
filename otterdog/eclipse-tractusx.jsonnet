@@ -280,6 +280,14 @@ orgs.newOrg('eclipse-tractusx') {
       workflows+: {
         default_workflow_permissions: "write",
       },
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
