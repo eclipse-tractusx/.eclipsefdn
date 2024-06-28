@@ -268,12 +268,25 @@ orgs.newOrg('eclipse-tractusx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
+      has_discussions: true,
+      web_commit_signoff_required: false,
       description: "digital product pass",
       private_vulnerability_reporting_enabled: true,
-      web_commit_signoff_required: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
+      homepage: "https://github.com/eclipse-tractusx/digital-product-pass",
       workflows+: {
         default_workflow_permissions: "write",
       },
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+      ]
     },
     orgs.newRepo('eclipse-tractusx.github.io') {
       allow_merge_commit: true,
