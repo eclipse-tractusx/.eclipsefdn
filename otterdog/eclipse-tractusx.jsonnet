@@ -1030,7 +1030,8 @@ orgs.newOrg('eclipse-tractusx') {
         },
       ],
     },
-    orgs.newRepo('sldt-ontology-models') {
+    orgs.newRepo('sldt-ontology-model') {
+      aliases: ['knowledge-agents-ontology'],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
