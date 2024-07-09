@@ -1233,6 +1233,9 @@ orgs.newOrg('eclipse-tractusx') {
         orgs.newRepoSecret('TRACE_X_USER_PW') {
           value: "********",
         },
+        orgs.newRepoSecret('TRACE_X_API_KEY_ASSOCIATION_INT') {
+          value: "pass:bots/automotive.tractusx/github.com/TRACE_X_API_KEY_ASSOCIATION_INT-secret",
+        },
       ],
       variables: [
         orgs.newRepoVariable('SONAR_ORGANIZATION') {
