@@ -99,7 +99,6 @@ orgs.newOrg('eclipse-tractusx') {
     orgs.newRepo('api-hub') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: true,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
@@ -269,17 +268,21 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
-      has_discussions: true,
-      web_commit_signoff_required: false,
       description: "digital product pass",
-      private_vulnerability_reporting_enabled: true,
-      gh_pages_build_type: "legacy",
-      gh_pages_source_branch: "gh-pages",
-      gh_pages_source_path: "/",
+      has_discussions: true,
       homepage: "https://github.com/eclipse-tractusx/digital-product-pass",
+      private_vulnerability_reporting_enabled: true,
+      web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
       },
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+      ],
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -288,13 +291,6 @@ orgs.newOrg('eclipse-tractusx') {
           deployment_branch_policy: "selected",
         },
       ],
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
-      ]
     },
     orgs.newRepo('eclipse-tractusx.github.io') {
       allow_merge_commit: true,
@@ -626,8 +622,10 @@ orgs.newOrg('eclipse-tractusx') {
       },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: null,
           requires_pull_request: false,
           requires_status_checks: false,
+          requires_strict_status_checks: true,
         },
       ],
     },
@@ -741,8 +739,8 @@ orgs.newOrg('eclipse-tractusx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       description: "Portal Shared UI Components",
-      homepage: "https://eclipse-tractusx.github.io/portal-shared-components",
       gh_pages_build_type: "workflow",
+      homepage: "https://eclipse-tractusx.github.io/portal-shared-components",
       private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
@@ -787,13 +785,13 @@ orgs.newOrg('eclipse-tractusx') {
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
           required_status_checks+: [
-            "docker-frontend",
-            "docker-backend",
             "Analyze KICS",
-            "check-dependencies-frontend",
+            "Check quality guidelines / Check quality guidelines",
             "check-dependencies-backend",
-            "Check quality guidelines / Check quality guidelines"
-          ]
+            "check-dependencies-frontend",
+            "docker-backend",
+            "docker-frontend"
+          ],
         },
       ],
       environments: [
@@ -1009,13 +1007,10 @@ orgs.newOrg('eclipse-tractusx') {
         },
       ],
     },
-    orgs.newRepo('sldt-semantic-hub') {
+    orgs.newRepo('sldt-ontology-model') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      gh_pages_build_type: "legacy",
-      gh_pages_source_branch: "gh-pages",
-      gh_pages_source_path: "/",
       private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
@@ -1030,8 +1025,7 @@ orgs.newOrg('eclipse-tractusx') {
         },
       ],
     },
-    orgs.newRepo('sldt-ontology-model') {
-      aliases: ['knowledge-agents-ontology'],
+    orgs.newRepo('sldt-semantic-hub') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -1232,6 +1226,9 @@ orgs.newOrg('eclipse-tractusx') {
         },
         orgs.newRepoSecret('TRACE_X_USER_PW') {
           value: "********",
+        },
+        orgs.newRepoSecret('TRACE_X_API_KEY_ASSOCIATION_INT') {
+          value: "pass:bots/automotive.tractusx/github.com/TRACE_X_API_KEY_ASSOCIATION_INT-secret",
         },
       ],
       variables: [
