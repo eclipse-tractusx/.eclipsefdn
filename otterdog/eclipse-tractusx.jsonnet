@@ -158,6 +158,7 @@ orgs.newOrg('eclipse-tractusx') {
       },
     },
     orgs.newRepo('bpdm-upload-tool') {
+      archived: true,
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -1482,6 +1483,7 @@ orgs.newOrg('eclipse-tractusx') {
       ],
     },
     orgs.newRepo('vas-country-risk-backend') {
+      archived: true,
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
