@@ -824,16 +824,6 @@ orgs.newOrg('eclipse-tractusx') {
         default_workflow_permissions: "write",
       },
     },
-    orgs.newRepo('quality-dashboard') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
-      private_vulnerability_reporting_enabled: true,
-      web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "write",
-      },
-    },
     orgs.newRepo('sd-factory') {
       allow_merge_commit: true,
       allow_update_branch: false,
@@ -901,18 +891,6 @@ orgs.newOrg('eclipse-tractusx') {
       ],
     },
     orgs.newRepo('sig-security') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
-      dependabot_security_updates_enabled: true,
-      has_discussions: true,
-      private_vulnerability_reporting_enabled: true,
-      web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "write",
-      },
-    },
-    orgs.newRepo('sig-testing') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
