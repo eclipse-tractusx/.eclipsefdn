@@ -1232,6 +1232,33 @@ orgs.newOrg('eclipse-tractusx') {
         orgs.newRepoSecret('TRACE_X_API_KEY_ASSOCIATION_INT') {
           value: "pass:bots/automotive.tractusx/github.com/TRACE_X_API_KEY_ASSOCIATION_INT-secret",
         },
+        orgs.newRepoSecret('ASSOCIATION_SUPERVISOR_TX_A_CLIENT_ID') {
+          value: "pass:bots/automotive.tractusx/github.com/ASSOCIATION_SUPERVISOR_TX_A_CLIENT_ID",
+        },
+        orgs.newRepoSecret('ASSOCIATION_SUPERVISOR_TX_A_PASSWORD') {
+          value: "pass:bots/automotive.tractusx/github.com/ASSOCIATION_SUPERVISOR_TX_A_PASSWORD",
+        },
+        orgs.newRepoSecret('ASSOCIATION_SUPERVISOR_TX_B_CLIENT_ID') {
+          value: "pass:bots/automotive.tractusx/github.com/ASSOCIATION_SUPERVISOR_TX_B_CLIENT_ID",
+        },
+        orgs.newRepoSecret('ASSOCIATION_SUPERVISOR_TX_B_PASSWORD') {
+          value: "pass:bots/automotive.tractusx/github.com/ASSOCIATION_SUPERVISOR_TX_B_PASSWORD",
+        },
+        orgs.newRepoSecret('ASSOCIATION_TX_JIRA_USERNAME') {
+          value: "pass:bots/automotive.tractusx/github.com/ASSOCIATION_TX_JIRA_USERNAME",
+        },
+        orgs.newRepoSecret('ASSOCIATION_TX_JIRA_PASSWORD') {
+          value: "pass:bots/automotive.tractusx/github.com/ASSOCIATION_TX_JIRA_PASSWORD",
+        },
+        orgs.newRepoSecret('ASSOCIATION_E2E_TXA_HOST') {
+          value: "pass:bots/automotive.tractusx/github.com/ASSOCIATION_E2E_TXA_HOST",
+        },
+        orgs.newRepoSecret('ASSOCIATION_E2E_TXB_HOST') {
+          value: "pass:bots/automotive.tractusx/github.com/ASSOCIATION_E2E_TXB_HOST",
+        },
+        orgs.newRepoSecret('ASSOCIATION_KEYCLOAK_HOST') {
+          value: "pass:bots/automotive.tractusx/github.com/ASSOCIATION_KEYCLOAK_HOST",
+        },
       ],
       variables: [
         orgs.newRepoVariable('SONAR_ORGANIZATION') {
