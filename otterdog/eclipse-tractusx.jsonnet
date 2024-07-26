@@ -413,6 +413,12 @@ orgs.newOrg('eclipse-tractusx') {
         orgs.newRepoSecret('SONAR_TOKEN') {
           value: "********",
         },
+        orgs.newRepoSecret('IRS_XRAY_JIRA_USER') {
+          value: "pass:bots/automotive.tractusx/github.com/IRS_XRAY_JIRA_USER",
+        },
+        orgs.newRepoSecret('IRS_XRAY_JIRA_SECRET') {
+          value: "pass:bots/automotive.tractusx/github.com/IRS_XRAY_JIRA_SECRET",
+        },
       ],
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
