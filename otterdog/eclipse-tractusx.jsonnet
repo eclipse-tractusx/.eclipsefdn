@@ -343,6 +343,7 @@ orgs.newOrg('eclipse-tractusx') {
       },
     },
     orgs.newRepo('emergingtechnologies') {
+      archived: true,
       private_vulnerability_reporting_enabled: true,
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
