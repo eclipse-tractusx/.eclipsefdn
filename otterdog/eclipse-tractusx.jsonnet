@@ -654,7 +654,7 @@ orgs.newOrg('eclipse-tractusx') {
     orgs.newRepo('portal-assets') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      description: "Portal Assets",
+      description: "Portal Documentation and Static Image Content",
       private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
