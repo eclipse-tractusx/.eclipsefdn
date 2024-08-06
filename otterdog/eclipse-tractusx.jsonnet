@@ -1517,5 +1517,22 @@ orgs.newOrg('eclipse-tractusx') {
         default_workflow_permissions: "write",
       },
     },
+    orgs.newRepo('wallet-dim-stub') {
+      description: "Wallet DIM stub application",
+      allow_forking: true,
+      allow_merge_commit: true,
+      dependabot_alerts_enabled: true,
+      dependabot_security_updates_enabled: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      default_branch: "main",
+      has_discussions: true,
+      has_issues: true,
+      private_vulnerability_reporting_enabled: true,
+      web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+    },
   ],
 }
