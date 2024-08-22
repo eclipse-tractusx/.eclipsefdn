@@ -147,6 +147,7 @@ orgs.newOrg('eclipse-tractusx') {
       },
     },
     orgs.newRepo('bpdm-certificate-management') {
+      archived: true,
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
