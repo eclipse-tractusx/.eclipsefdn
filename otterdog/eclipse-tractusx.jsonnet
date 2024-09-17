@@ -1506,6 +1506,9 @@ orgs.newOrg('eclipse-tractusx') {
       has_discussions: true,
       private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
       workflows+: {
         default_workflow_permissions: "read",
       },
