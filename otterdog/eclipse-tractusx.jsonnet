@@ -273,7 +273,7 @@ orgs.newOrg('eclipse-tractusx') {
       dependabot_security_updates_enabled: true,
       has_discussions: true,
       web_commit_signoff_required: false,
-      description: "digital product pass",
+      description: "Eclipse Tractus-X Digital Product Pass - An application for visualizing Digital Product Passports, Battery Passports and Transmission Passports, it is the reference implementation of the EcoPass KIT",
       private_vulnerability_reporting_enabled: true,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
@@ -847,7 +847,9 @@ orgs.newOrg('eclipse-tractusx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      description: "Repository for Tractus-X infrastructure topics and resources. ",
       has_discussions: true,
+      homepage: "",
       private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
@@ -893,7 +895,9 @@ orgs.newOrg('eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
+      description: "Repository for Tractus-X Security Topics and Resources",
       has_discussions: true,
+      homepage: "",
       private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
@@ -1512,6 +1516,14 @@ orgs.newOrg('eclipse-tractusx') {
       workflows+: {
         default_workflow_permissions: "read",
       },
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
       secrets: [
         orgs.newRepoSecret('SONAR_TOKEN') {
           value: "pass:bots/automotive.tractusx/sonarcloud.io/token-ssi-dim-wallet-stub",
