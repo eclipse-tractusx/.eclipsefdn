@@ -16,7 +16,7 @@ orgs.newOrg('eclipse-tractusx') {
   },
   secrets+: [
     orgs.newOrgSecret('DOCKER_HUB_TOKEN') {
-      value: "pass:bots/automotive.tractusx/docker.com/token",
+      value: "pass:bots/automotive.tractusx/docker.com/api-token",
     },
     orgs.newOrgSecret('DOCKER_HUB_USER') {
       value: "pass:bots/automotive.tractusx/docker.com/username",
