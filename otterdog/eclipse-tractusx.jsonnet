@@ -316,6 +316,7 @@ orgs.newOrg('eclipse-tractusx') {
       },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 1,
           dismisses_stale_reviews: true,
         },
       ],
