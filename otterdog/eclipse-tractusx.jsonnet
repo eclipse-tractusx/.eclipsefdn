@@ -1018,6 +1018,8 @@ orgs.newOrg('eclipse-tractusx') {
       aliases: ['knowledge-agents-ontology'],
       allow_merge_commit: true,
       allow_update_branch: false,
+      code_scanning_default_setup_enabled: true,
+      code_scanning_default_languages: ["python"],
       delete_branch_on_merge: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
