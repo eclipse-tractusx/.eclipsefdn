@@ -1486,9 +1486,6 @@ orgs.newOrg('eclipse-tractusx') {
       delete_branch_on_merge: false,
       private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "read",
-      },
     },
     orgs.newRepo('tractusx-edc-template') {
       delete_branch_on_merge: false,
