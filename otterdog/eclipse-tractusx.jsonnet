@@ -1484,7 +1484,6 @@ orgs.newOrg('eclipse-tractusx') {
       dependabot_security_updates_enabled: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
     },
     orgs.newRepo('tractusx-edc-template') {
