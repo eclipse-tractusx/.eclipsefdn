@@ -1477,6 +1477,16 @@ orgs.newOrg('eclipse-tractusx') {
         },
       ],
     },
+    orgs.newRepo('tractusx-edc-compatibility-tests') {
+      description: "Compatibility tests for Tractus-X EDC",
+      allow_merge_commit: true,
+      dependabot_alerts_enabled: true,
+      dependabot_security_updates_enabled: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      private_vulnerability_reporting_enabled: true,
+      web_commit_signoff_required: false,
+    },
     orgs.newRepo('tractusx-edc-template') {
       delete_branch_on_merge: false,
       is_template: true,
