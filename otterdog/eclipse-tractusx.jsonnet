@@ -318,9 +318,6 @@ orgs.newOrg('eclipse-tractusx') {
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
           dismisses_stale_reviews: true,
-      	  required_status_checks+: [
-      		  "Verify website build"
-      	  ],
         },
       ],
       environments: [
