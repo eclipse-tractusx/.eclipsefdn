@@ -319,7 +319,7 @@ orgs.newOrg('eclipse-tractusx') {
           required_approving_review_count: 1,
           dismisses_stale_reviews: true,
       	  required_status_checks+: [
-      		  "Build static website"
+      		  "Verify website build"
       	  ],
         },
       ],
