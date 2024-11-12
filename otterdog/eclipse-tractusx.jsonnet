@@ -874,7 +874,7 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       delete_branch_on_merge: false,
-      description: "Repository for Eclipse Tractus-X™ Architecture topics, documenting the dataspace technology general architecture and overall design decisions.",
+      description: "Eclipse Tractus-X Architecture topics, general architecture documentation and overall design decisions.",
       has_discussions: true,
       homepage: "",
       private_vulnerability_reporting_enabled: true,
