@@ -874,7 +874,7 @@ orgs.newOrg('eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       delete_branch_on_merge: false,
-      description: "Repository for Tractus-X Architecture topics, documenting Tractus-X general architecture and overall design decisions.",
+      description: "Repository for Eclipse Tractus-X™ Architecture topics, documenting the dataspace technology general architecture and overall design decisions.",
       has_discussions: true,
       homepage: "",
       private_vulnerability_reporting_enabled: true,
@@ -886,6 +886,14 @@ orgs.newOrg('eclipse-tractusx') {
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1
         }
+      ],
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
       ]
     },
     orgs.newRepo('sig-infra') {
