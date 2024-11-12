@@ -882,6 +882,11 @@ orgs.newOrg('eclipse-tractusx') {
       workflows+: {
         default_workflow_permissions: "write",
       },
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 1
+        }
+      ]
     },
     orgs.newRepo('sig-infra') {
       allow_merge_commit: true,
