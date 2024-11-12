@@ -867,6 +867,22 @@ orgs.newOrg('eclipse-tractusx') {
         },
       ],
     },
+    orgs.newRepo('sig-architecture') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
+      delete_branch_on_merge: false,
+      description: "Repository for Tractus-X Architecture topics, documenting Tractus-X general architecture and overall design decisions.",
+      has_discussions: true,
+      homepage: "",
+      private_vulnerability_reporting_enabled: true,
+      web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+    },
     orgs.newRepo('sig-infra') {
       allow_merge_commit: true,
       allow_update_branch: false,
