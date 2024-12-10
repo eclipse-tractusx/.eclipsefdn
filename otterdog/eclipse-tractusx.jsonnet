@@ -877,7 +877,6 @@ orgs.newOrg('eclipse-tractusx') {
       description: "Eclipse Tractus-X Architecture topics, general architecture documentation and overall design decisions.",
       has_discussions: true,
       homepage: "",
-      private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -1432,10 +1431,12 @@ orgs.newOrg('eclipse-tractusx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      description: "Where all Tractus-X comes together",
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "main",
       gh_pages_source_path: "/",
       has_discussions: true,
+      homepage: "",
       private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
