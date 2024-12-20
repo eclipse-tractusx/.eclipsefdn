@@ -6,9 +6,6 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     name: "Eclipse Tractus-X",
     packages_containers_internal: false,
     packages_containers_public: false,
-    security_managers+: [
-      "automotive-tractusx-committers"
-    ],
     web_commit_signoff_required: false,
     workflows+: {
       default_workflow_permissions: "write",
