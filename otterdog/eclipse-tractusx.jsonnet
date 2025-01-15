@@ -871,7 +871,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       delete_branch_on_merge: false,
-      description: "Eclipse Tractus-X Architecture topics, general architecture documentation and overall design decisions.",
+      description: "Eclipse Tractus-X Architecture topics, general architecture documentation, dataspace usage patterns and overall design decisions.",
       has_discussions: true,
       homepage: "",
       web_commit_signoff_required: false,
