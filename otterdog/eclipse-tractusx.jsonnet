@@ -84,6 +84,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       },
     },
     orgs.newRepo('SSI-agent-lib') {
+      archived: true,
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -257,6 +258,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       ],
     },
     orgs.newRepo('demand-capacity-mgmt') {
+      archived: true,
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -485,6 +487,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       },
     },
     orgs.newRepo('managed-identity-wallet') {
+      archived: true,
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -1597,6 +1600,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       ],
     },
     orgs.newRepo('vas-country-risk') {
+      archived: true,
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
