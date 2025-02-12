@@ -275,7 +275,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       dependabot_security_updates_enabled: true,
       description: "Eclipse Tractus-X Industry Core Hub [IC-Hub] - The Catena-X Use Case Speedway",
       gh_pages_build_type: "legacy",
-      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_branch: "main",
       gh_pages_source_path: "/",
       has_discussions: true,
       homepage: "https://eclipse-tractusx.github.io/industry-core-hub/",
@@ -284,7 +284,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
-            "gh-pages"
+            "main"
           ],
           deployment_branch_policy: "selected",
         },
