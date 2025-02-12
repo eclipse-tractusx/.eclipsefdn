@@ -273,7 +273,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
-      description: "Eclipse Tractus-X Software Development KIT - The industry and dataspace middleware",
+      description: "Eclipse Tractus-X Software Development KIT - The Dataspace & Industry Foundation Middleware",
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
