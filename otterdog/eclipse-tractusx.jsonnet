@@ -1653,7 +1653,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
         default_workflow_permissions: "write",
       },
     },
-    orgs.newRepo('edc-kafka-extension') {
+    orgs.newRepo('tractusx-edc-kafka-extension') {
       allow_merge_commit: true,
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
