@@ -60,6 +60,9 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newOrgSecret('VERACODE_API_KEY') {
       value: "pass:bots/automotive.tractusx/veracode.com/api-key",
     },
+    orgs.newOrgSecret('PYPI_TOKEN') {
+      value: "pass:bots/automotive.tractusx/pypi.org/api-token",
+    },
   ],
   variables+: [
     orgs.newOrgVariable('HELM_REPO') {
