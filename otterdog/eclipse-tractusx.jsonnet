@@ -12,6 +12,9 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     },
   },
   secrets+: [
+    orgs.newOrgSecret('DEVELOCITY_API_TOKEN') {
+      value: "pass:bots/automotive.tractusx/develocity.eclipse.org/api-token",
+    },
     orgs.newOrgSecret('DOCKER_HUB_TOKEN') {
       value: "pass:bots/automotive.tractusx/docker.com/api-token",
     },
