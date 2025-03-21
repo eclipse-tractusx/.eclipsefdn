@@ -51,6 +51,9 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newOrgSecret('ORG_VERACODE_API_KEY') {
       value: "pass:bots/automotive.tractusx/veracode.com/api-key",
     },
+    orgs.newOrgSecret('PYPI_TOKEN') {
+      value: "pass:bots/automotive.tractusx/pypi.org/api-token",
+    },
     orgs.newOrgSecret('SWAGGERHUB_API_KEY') {
       value: "pass:bots/automotive.tractusx/swaggerhub.com/api-key",
     },
@@ -62,9 +65,6 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     },
     orgs.newOrgSecret('VERACODE_API_KEY') {
       value: "pass:bots/automotive.tractusx/veracode.com/api-key",
-    },
-    orgs.newOrgSecret('PYPI_TOKEN') {
-      value: "pass:bots/automotive.tractusx/pypi.org/api-token",
     },
   ],
   variables+: [
@@ -90,11 +90,11 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       },
     },
     orgs.newRepo('SSI-agent-lib') {
-      archived: true,
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
-      private_vulnerability_reporting_enabled: true,
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -155,6 +155,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       archived: true,
       delete_branch_on_merge: false,
       description: "reference implementation for business partner certificates",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -169,6 +170,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       has_discussions: true,
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -264,59 +266,15 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       ],
     },
     orgs.newRepo('demand-capacity-mgmt') {
-      archived: true,
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
-      private_vulnerability_reporting_enabled: true,
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
       },
-    },
-    orgs.newRepo('tractusx-sdk') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
-      dependabot_security_updates_enabled: true,
-      description: "Eclipse Tractus-X Software Development KIT - The Dataspace & Industry Foundation Middleware",
-      gh_pages_build_type: "legacy",
-      gh_pages_source_branch: "gh-pages",
-      gh_pages_source_path: "/",
-      has_discussions: true,
-      homepage: "https://eclipse-tractusx.github.io/tractusx-sdk/",
-      private_vulnerability_reporting_enabled: true,
-      web_commit_signoff_required: false,
-      environments: [
-        orgs.newEnvironment('github-pages') {
-          branch_policies+: [
-            "gh-pages"
-          ],
-          deployment_branch_policy: "selected",
-        },
-      ],
-    },
-    orgs.newRepo('industry-core-hub') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
-      dependabot_security_updates_enabled: true,
-      description: "Eclipse Tractus-X Industry Core Hub [IC-Hub] - The Catena-X Use Case Speedway",
-      gh_pages_build_type: "legacy",
-      gh_pages_source_branch: "main",
-      gh_pages_source_path: "/",
-      has_discussions: true,
-      homepage: "https://eclipse-tractusx.github.io/industry-core-hub/",
-      private_vulnerability_reporting_enabled: true,
-      web_commit_signoff_required: false,
-      environments: [
-        orgs.newEnvironment('github-pages') {
-          branch_policies+: [
-            "main"
-          ],
-          deployment_branch_policy: "selected",
-        },
-      ],
     },
     orgs.newRepo('digital-product-pass') {
       allow_merge_commit: true,
@@ -365,8 +323,8 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 1,
           dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
         },
       ],
       environments: [
@@ -401,11 +359,34 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     },
     orgs.newRepo('emergingtechnologies') {
       archived: true,
+      secret_scanning_push_protection: "disabled",
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
           requires_status_checks: false,
           requires_strict_status_checks: true,
+        },
+      ],
+    },
+    orgs.newRepo('industry-core-hub') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
+      description: "Eclipse Tractus-X Industry Core Hub [IC-Hub] - The Catena-X Use Case Speedway",
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "main",
+      gh_pages_source_path: "/",
+      has_discussions: true,
+      homepage: "https://eclipse-tractusx.github.io/industry-core-hub/",
+      private_vulnerability_reporting_enabled: true,
+      web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "main"
+          ],
+          deployment_branch_policy: "selected",
         },
       ],
     },
@@ -515,16 +496,16 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       },
     },
     orgs.newRepo('managed-identity-wallet') {
-      archived: true,
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       has_discussions: true,
-      private_vulnerability_reporting_enabled: true,
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -679,6 +660,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
       description: "Portal - Helm charts",
+      has_discussions: true,
       private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
@@ -920,11 +902,11 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('sig-architecture') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "Eclipse Tractus-X Architecture topics, general architecture documentation, dataspace usage patterns and overall design decisions.",
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
-      delete_branch_on_merge: false,
-      description: "Eclipse Tractus-X Architecture topics, general architecture documentation, dataspace usage patterns and overall design decisions.",
       has_discussions: true,
       homepage: "",
       web_commit_signoff_required: false,
@@ -933,8 +915,8 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 1
-        }
+          required_approving_review_count: 1,
+        },
       ],
       environments: [
         orgs.newEnvironment('github-pages') {
@@ -943,7 +925,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
           ],
           deployment_branch_policy: "selected",
         },
-      ]
+      ],
     },
     orgs.newRepo('sig-infra') {
       allow_merge_commit: true,
@@ -965,7 +947,6 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       has_discussions: true,
-      has_projects: true,
       homepage: "https://eclipse-tractusx.github.io/sig-release",
       private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
@@ -1093,11 +1074,12 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       ],
     },
     orgs.newRepo('sldt-ontology-model') {
-      aliases: ['knowledge-agents-ontology'],
       allow_merge_commit: true,
       allow_update_branch: false,
+      code_scanning_default_languages+: [
+        "python"
+      ],
       code_scanning_default_setup_enabled: true,
-      code_scanning_default_languages: ["python"],
       delete_branch_on_merge: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
@@ -1555,13 +1537,40 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       ],
     },
     orgs.newRepo('tractusx-edc-compatibility-tests') {
-      description: "Compatibility tests for Tractus-X EDC",
       allow_merge_commit: true,
-      dependabot_alerts_enabled: true,
-      dependabot_security_updates_enabled: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
+      description: "Compatibility tests for Tractus-X EDC",
       web_commit_signoff_required: false,
+    },
+    orgs.newRepo('tractusx-edc-kafka-extension') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
+      description: "Eclipse Tractus-X EDC Kafka Extension",
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
+      has_discussions: true,
+      homepage: "",
+      private_vulnerability_reporting_enabled: true,
+      web_commit_signoff_required: false,
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+      ],
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
     orgs.newRepo('tractusx-edc-template') {
       delete_branch_on_merge: false,
@@ -1576,10 +1585,10 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       ],
     },
     orgs.newRepo('tractusx-identityhub') {
+      allow_auto_merge: true,
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      allow_auto_merge: true,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
@@ -1596,10 +1605,10 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       ],
     },
     orgs.newRepo('tractusx-issuerservice') {
+      allow_auto_merge: true,
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      allow_auto_merge: true,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
@@ -1645,6 +1654,29 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
         default_workflow_permissions: "write",
       },
     },
+    orgs.newRepo('tractusx-sdk') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
+      description: "Eclipse Tractus-X Software Development KIT - The Dataspace & Industry Foundation Middleware",
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
+      has_discussions: true,
+      homepage: "https://pypi.org/project/tractusx-sdk",
+      private_vulnerability_reporting_enabled: true,
+      web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+        orgs.newEnvironment('pypi'),
+      ],
+    },
     orgs.newRepo('tutorial-resources') {
       allow_merge_commit: true,
       allow_update_branch: false,
@@ -1668,14 +1700,14 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       ],
     },
     orgs.newRepo('vas-country-risk') {
-      archived: true,
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
-      private_vulnerability_reporting_enabled: true,
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -1694,38 +1726,11 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       allow_update_branch: false,
       archived: true,
       delete_branch_on_merge: false,
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
       },
-    },
-    orgs.newRepo('tractusx-edc-kafka-extension') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      dependabot_security_updates_enabled: true,
-      description: "Eclipse Tractus-X EDC Kafka Extension",
-      gh_pages_build_type: "legacy",
-      gh_pages_source_branch: "gh-pages",
-      gh_pages_source_path: "/",
-      has_discussions: true,
-      homepage: "",
-      private_vulnerability_reporting_enabled: true,
-      web_commit_signoff_required: false,
-      environments: [
-        orgs.newEnvironment('github-pages') {
-          branch_policies+: [
-            "gh-pages"
-          ],
-          deployment_branch_policy: "selected",
-        },
-      ],
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
-      ],
     },
   ],
 }
