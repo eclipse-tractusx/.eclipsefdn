@@ -325,6 +325,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
         orgs.newBranchProtectionRule('main') {
           dismisses_stale_reviews: true,
           required_approving_review_count: 1,
+          lock_branch: true,
         },
       ],
       environments: [
