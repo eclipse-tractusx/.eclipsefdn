@@ -1272,6 +1272,30 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
         default_workflow_permissions: "write",
       },
     },
+    orgs.newRepo('tractusx-sdk-services') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
+      description: "Test orchestrator & DT Pull Service - Helps new partners in onboarding",
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "main",
+      gh_pages_source_path: "/",
+      has_discussions: true,
+      private_vulnerability_reporting_enabled: true,
+      web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "main"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
+    },
     orgs.newRepo('traceability-foss') {
       allow_merge_commit: true,
       allow_update_branch: false,
