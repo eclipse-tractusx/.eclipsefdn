@@ -1588,6 +1588,19 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
           requires_strict_status_checks: true,
         },
       ],
+      secrets+: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/automotive.tractusx/sonarcloud.io/token-tractusx-edc-kafka-extension",
+       },
+      ],
+      variables: [
+        orgs.newRepoVariable('SONAR_ORGANIZATION') {
+          value: "eclipse-tractusx",
+        },
+        orgs.newRepoVariable('SONAR_PROJECT_KEY') {
+          value: "eclipse-tractusx_tractusx-edc-kafka-extension",
+        },
+      ],
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
