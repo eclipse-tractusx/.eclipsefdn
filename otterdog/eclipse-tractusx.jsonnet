@@ -837,7 +837,6 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
           required_status_checks+: [
-            "Analyze KICS",
             "Check quality guidelines / Check quality guidelines",
             "check-dependencies-backend",
             "check-dependencies-frontend",
