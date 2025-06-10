@@ -1277,7 +1277,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
-      description: "Test orchestrator & DT Pull Service - Helps new partners in onboarding",
+      description: "Modular Microservices from various use cases that use the Tractus-X SDK",
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "main",
       gh_pages_source_path: "/",
