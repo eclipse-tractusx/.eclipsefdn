@@ -33,11 +33,11 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newOrgSecret('ORG_GPG_PRIVATE_KEY') {
       value: "pass:bots/automotive.tractusx/gpg/secret-subkeys.asc",
     },
-    orgs.newOrgSecret('ORG_OSSRH_PASSWORD') {
-      value: "pass:bots/automotive.tractusx/oss.sonatype.org/gh-token-password",
+    orgs.newOrgSecret('CENTRAL_SONATYPE_TOKEN_PASSWORD') {
+      value: "pass:bots/automotive.tractusx/central.sonatype.org/token-password",
     },
-    orgs.newOrgSecret('ORG_OSSRH_USERNAME') {
-      value: "pass:bots/automotive.tractusx/oss.sonatype.org/gh-token-username",
+    orgs.newOrgSecret('CENTRAL_SONATYPE_TOKEN_USERNAME') {
+      value: "pass:bots/automotive.tractusx/central.sonatype.org/token-username",
     },
     orgs.newOrgSecret('ORG_PORTAL_DISPATCH_APPID') {
       value: "pass:bots/automotive.tractusx/github.com/github-app-id",
@@ -837,6 +837,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
           required_status_checks+: [
+            "Analyze KICS",
             "Check quality guidelines / Check quality guidelines",
             "check-dependencies-backend",
             "check-dependencies-frontend",
@@ -1276,7 +1277,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
-      description: "Modular Microservices from various use cases that use the Tractus-X SDK",
+      description: "Test orchestrator & DT Pull Service - Helps new partners in onboarding",
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "main",
       gh_pages_source_path: "/",
