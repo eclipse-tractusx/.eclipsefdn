@@ -1643,6 +1643,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       ],
     },
     orgs.newRepo('tractusx-issuerservice') {
+      archived: true,
       allow_auto_merge: true,
       allow_merge_commit: true,
       allow_update_branch: false,
