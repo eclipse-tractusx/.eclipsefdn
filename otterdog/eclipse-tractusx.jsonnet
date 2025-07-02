@@ -147,20 +147,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
-      },
-      secrets: [
-        orgs.newRepoSecret('SONAR_TOKEN') {
-          value: "pass:bots/automotive.tractusx/sonarcloud.io/token-bpdm",
-        },
-      ],
-      variables: [
-        orgs.newRepoVariable('SONAR_ORGANIZATION') {
-          value: "eclipse-tractusx",
-        },
-        orgs.newRepoVariable('SONAR_PROJECT_KEY') {
-          value: "eclipse-tractusx_bpdm",
-        },
-      ],
+      }
     },
     orgs.newRepo('bpdm-certificate-management') {
       allow_merge_commit: true,
