@@ -1041,7 +1041,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       },
       secrets: [
         orgs.newRepoSecret('SONAR_TOKEN') {
-          value: "pass:bots/automotive.tractusx/sonarcloud.io/token-tractusx_sldt-digital-twin-registry",
+          value: "pass:bots/automotive.tractusx/sonarcloud.io/token-sldt-digital-twin-registry",
         },
       ],
       variables: [
