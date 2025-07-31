@@ -387,7 +387,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
-      description: "Eclipse Tractus-X Industry Core Hub [IC-Hub] - The Catena-X Use Case Speedway",
+      description: "Eclipse Tractus-X Industry Core Hub [IC-Hub] - The KIT/Use Case Speedway",
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "main",
       gh_pages_source_path: "/",
