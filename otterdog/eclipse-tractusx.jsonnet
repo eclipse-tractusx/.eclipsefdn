@@ -289,17 +289,17 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
         default_workflow_permissions: "write",
       },
     },
-    orgs.newRepo('digital-twin-suite') {
+    orgs.newRepo('aas-suite') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
-      description: "Eclipse Tractus-X Digital Twin Suite [DTS] - An integration between BaSyx & Tractus-X Python SDKs",
+      description: "Eclipse Tractus-X Asset Administration Shell Suite [AAS Suite] - An integration between BaSyx & Tractus-X Python SDKs",
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       has_discussions: true,
-      homepage: "https://github.com/eclipse-tractusx/digital-twin-suite",
+      homepage: "https://github.com/eclipse-tractusx/aas-suite",
       private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       environments: [
