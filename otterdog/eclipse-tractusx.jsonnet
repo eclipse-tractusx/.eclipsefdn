@@ -289,7 +289,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
         default_workflow_permissions: "write",
       },
     },
-    orgs.newRepo('aas-suite') {
+    orgs.newRepo('aas-suite-python') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -299,7 +299,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       has_discussions: true,
-      homepage: "https://github.com/eclipse-tractusx/aas-suite",
+      homepage: "https://github.com/eclipse-tractusx/aas-suite-python",
       private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       environments: [
