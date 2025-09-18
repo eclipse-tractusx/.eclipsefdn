@@ -694,7 +694,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       has_discussions: true,
-      homepage: "https://github.com/eclipse-tractusx/policy-builder",
+      homepage: "https://eclipse-tractusx.github.io/tractusx-edc-dashboard",
       private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       environments: [
