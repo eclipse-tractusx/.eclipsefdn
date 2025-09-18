@@ -689,7 +689,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
-      description: "The new policy-builder allows the user to generate needed policies with an easy to use web interface.",
+      description: "This GUI allows to interact with the Tractus-X EDC Management API, including an easy to use policy builder.",
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
