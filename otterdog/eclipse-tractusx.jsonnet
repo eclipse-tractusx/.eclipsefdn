@@ -404,6 +404,28 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
         },
       ],
     },
+    orgs.newRepo('engineering-use-case-demonstrator') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
+      description: "3D demonstrator for engineering use case",
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
+      has_discussions: true,
+      homepage: "https://github.com/eclipse-tractusx/engineering-use-case-demonstrator",
+      private_vulnerability_reporting_enabled: true,
+      web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
+    },
     orgs.newRepo('industry-core-hub') {
       allow_merge_commit: true,
       allow_update_branch: false,
@@ -653,6 +675,28 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       workflows+: {
         default_workflow_permissions: "write",
       },
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
+    },
+    orgs.newRepo('tractusx-edc-dashboard') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
+      description: "This GUI allows to interact with the Tractus-X EDC Management API, including an easy to use policy builder.",
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
+      has_discussions: true,
+      homepage: "https://eclipse-tractusx.github.io/tractusx-edc-dashboard",
+      private_vulnerability_reporting_enabled: true,
+      web_commit_signoff_required: false,
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
