@@ -313,6 +313,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     },
     orgs.newRepo('digital-product-pass') {
       allow_merge_commit: true,
+      archived: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
