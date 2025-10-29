@@ -446,6 +446,9 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
           ],
           deployment_branch_policy: "selected",
         },
+        orgs.newEnvironment('copilot') {
+          deployment_branch_policy: "all",
+        },
       ],
     },
     orgs.newRepo('item-relationship-service') {
@@ -1157,7 +1160,8 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       code_scanning_default_languages+: [
-        "python"
+        "python",
+        "actions"
       ],
       code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
