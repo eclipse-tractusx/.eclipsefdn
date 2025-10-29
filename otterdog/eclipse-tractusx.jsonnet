@@ -2,7 +2,7 @@ local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
 orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
   settings+: {
-    description: "",
+    description: "Where we build dataspaces!",
     name: "Eclipse Tractus-X",
     packages_containers_internal: false,
     packages_containers_public: false,
