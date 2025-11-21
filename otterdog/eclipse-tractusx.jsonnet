@@ -1799,6 +1799,14 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
         orgs.newEnvironment('pypi'),
       ],
     },
+    orgs.newRepo('tractusx-edc-virtual-connector') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
+      description: "Components and services for virtualized control plane",
+      web_commit_signoff_required: false,
+    },
     orgs.newRepo('tutorial-resources') {
       allow_merge_commit: true,
       allow_update_branch: false,
