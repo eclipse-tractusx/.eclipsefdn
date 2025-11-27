@@ -1799,7 +1799,8 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
         orgs.newEnvironment('pypi'),
       ],
     },
-    orgs.newRepo('tractusx-edc-virtual-connector') {
+    orgs.newRepo('tractusx-virtual-connector') {
+      aliases: ['tractusx-edc-virtual-connector'],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
