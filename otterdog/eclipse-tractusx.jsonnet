@@ -712,6 +712,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('policy-hub') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       dependabot_security_updates_enabled: true,
       description: "Policy Hub",
       private_vulnerability_reporting_enabled: true,
