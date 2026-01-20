@@ -1244,6 +1244,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('ssi-authority-schema-registry') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       dependabot_security_updates_enabled: true,
       description: "SSI Authority & Schema Registry",
       private_vulnerability_reporting_enabled: true,
