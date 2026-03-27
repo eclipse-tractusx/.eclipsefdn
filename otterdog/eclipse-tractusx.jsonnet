@@ -22,10 +22,10 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       value: "pass:bots/automotive.tractusx/docker.com/username",
     },
     orgs.newOrgSecret('HELM_PASSWORD') {
-      value: "pass:bots/automotive.tractusx/repo3.eclipse.org/token-password",
+      value: "vault:automotive.tractusx/repo.eclipse.org/token-password",
     },
     orgs.newOrgSecret('HELM_USER') {
-      value: "pass:bots/automotive.tractusx/repo3.eclipse.org/token-username",
+      value: "vault:automotive.tractusx/repo.eclipse.org/token-username",
     },
     orgs.newOrgSecret('ORG_GPG_PASSPHRASE') {
       value: "pass:bots/automotive.tractusx/gpg/passphrase",
@@ -482,7 +482,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
           value: "********",
         },
         orgs.newRepoSecret('SONAR_TOKEN') {
-          value: "********",
+          value: "pass:bots/automotive.tractusx/sonarcloud.io/token-item-relationship-service",
         },
       ],
       branch_protection_rules: [
@@ -781,7 +781,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
           value: "pass:bots/automotive.tractusx/nuget.org/api-token",
         },
         orgs.newRepoSecret('SONAR_TOKEN') {
-          value: "********",
+          value: "pass:bots/automotive.tractusx/sonarcloud.io/token-portal-backend",
         },
       ],
       variables: [
@@ -1073,7 +1073,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       },
       secrets: [
         orgs.newRepoSecret('SONAR_TOKEN') {
-          value: "********",
+          value: "pass:bots/automotive.tractusx/sonarcloud.io/token-sldt-bpn-discovery",
         },
       ],
       environments: [
@@ -1133,7 +1133,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       },
       secrets: [
         orgs.newRepoSecret('SONAR_TOKEN') {
-          value: "********",
+          value: "pass:bots/automotive.tractusx/sonarcloud.io/token-sldt-discovery-finder",
         },
       ],
       environments: [
@@ -1426,10 +1426,10 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
           value: "********",
         },
         orgs.newRepoSecret('SONAR_TOKEN_BACKEND') {
-          value: "********",
+          value: "pass:bots/automotive.tractusx/sonarcloud.io/token-traceability-foss-backend",
         },
         orgs.newRepoSecret('SONAR_TOKEN_FRONTEND') {
-          value: "********",
+          value: "pass:bots/automotive.tractusx/sonarcloud.io/token-traceability-foss-frontend",
         },
         orgs.newRepoSecret('SUPERVISOR_CLIENT_ID') {
           value: "********",
@@ -1509,7 +1509,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       },
       secrets: [
         orgs.newRepoSecret('SONAR_TOKEN') {
-          value: "********",
+          value: "pass:bots/automotive.tractusx/sonarcloud.io/token-traceability-foss-backend",
         },
       ],
       variables: [
@@ -1614,7 +1614,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
           value: "********",
         },
         orgs.newRepoSecret('SONAR_TOKEN') {
-          value: "********",
+          value: "pass:bots/automotive.tractusx/sonarcloud.io/token-tractusx-edc",
         },
       ],
       variables: [
