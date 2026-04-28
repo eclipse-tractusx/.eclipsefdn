@@ -1765,7 +1765,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
         default_workflow_permissions: "write",
       },
     },
-    orgs.newRepo('tractusx-sdk-testlab') {
+    orgs.newRepo('tractusx-testlab') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -1775,7 +1775,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       has_discussions: true,
-      homepage: "https://pypi.org/project/tractusx-sdk-testlab",
+      homepage: "https://pypi.org/project/tractusx-testlab",
       private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       environments: [
