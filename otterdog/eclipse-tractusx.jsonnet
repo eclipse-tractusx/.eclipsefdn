@@ -1770,7 +1770,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
-      description: "Eclipse Tractus-X SDK Test Lab - A dataspace native testing framework",
+      description: "Eclipse Tractus-X Test Lab - A dataspace native testing framework which automates the usage of the tractusx-sdk for developing test case executables.",
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
