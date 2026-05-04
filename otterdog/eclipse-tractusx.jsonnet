@@ -1577,6 +1577,28 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
         },
       ],
     },
+    orgs.newRepo('tractus-x-umbrella-iac') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
+      description: "Infrastructure as Code for the Tractus-X Umbrella Helm Chart",
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
+      has_discussions: true,
+      homepage: "https://eclipse-tractusx.github.io/tractus-x-umbrella-iac",
+      private_vulnerability_reporting_enabled: true,
+      web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
+    },
     orgs.newRepo('tractusx-edc') {
       allow_merge_commit: true,
       allow_update_branch: false,
