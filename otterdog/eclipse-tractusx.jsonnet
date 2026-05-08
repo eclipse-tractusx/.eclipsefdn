@@ -12,9 +12,6 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     },
   },
   secrets+: [
-    orgs.newOrgSecret('DEVELOCITY_API_TOKEN') {
-      value: "pass:bots/automotive.tractusx/develocity.eclipse.org/api-token",
-    },
     orgs.newOrgSecret('DOCKER_HUB_TOKEN') {
       value: "pass:bots/automotive.tractusx/docker.com/api-token",
     },
@@ -1786,6 +1783,29 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       workflows+: {
         default_workflow_permissions: "write",
       },
+    },
+    orgs.newRepo('tractusx-testlab') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
+      description: "Eclipse Tractus-X Test Lab - A dataspace native testing framework which automates the usage of the tractusx-sdk for developing test case executables.",
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
+      has_discussions: true,
+      homepage: "https://pypi.org/project/tractusx-testlab",
+      private_vulnerability_reporting_enabled: true,
+      web_commit_signoff_required: false,
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+        orgs.newEnvironment('pypi'),
+      ],
     },
     orgs.newRepo('tractusx-sdk') {
       allow_merge_commit: true,
