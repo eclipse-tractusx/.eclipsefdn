@@ -351,7 +351,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
             'Run markdown lint',
             'Scan secrets',
             'Build static website',
-            'Quality Checks (Release Guidelines)',
+            'Check quality guidelines',
           ]
         },
       ],
