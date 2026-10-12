@@ -346,7 +346,13 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 0,
           requires_status_checks: true,
-          requires_strict_status_checks: true
+          requires_strict_status_checks: true,
+          required_status_checks: [
+            'Run markdown lint',
+            'Scan secrets',
+            'Build static website',
+            'Check quality guidelines',
+          ]
         },
       ],
       environments: [
