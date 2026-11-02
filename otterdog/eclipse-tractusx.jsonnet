@@ -1793,6 +1793,36 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
         default_workflow_permissions: "write",
       },
     },
+    orgs.newRepo('tractusx-starter-kit') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
+      description: "Eclipse Tractus-X Starter Kit",
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
+      homepage: "https://eclipse-tractusx.github.io/tractusx-starter-kit",
+      private_vulnerability_reporting_enabled: true,
+      web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
+        },
+      ],
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
+    },
     orgs.newRepo('tractusx-testlab') {
       allow_merge_commit: true,
       allow_update_branch: false,
