@@ -1793,16 +1793,17 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
         default_workflow_permissions: "write",
       },
     },
-    orgs.newRepo('dataspace-mgm-service') {
+    orgs.newRepo('dataspace-mgm-services') {
+      aliases: ['dataspace-mgm-service'],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
-      description: "Eclipse Tractus-X Dataspace Management Service (new Portal)",
+      description: "Eclipse Tractus-X Dataspace Management Services (new Portal)",
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
-      homepage: "https://eclipse-tractusx.github.io/dataspace-mgm-service",
+      homepage: "https://eclipse-tractusx.github.io/dataspace-mgm-services",
       private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
