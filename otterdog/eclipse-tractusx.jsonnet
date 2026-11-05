@@ -1868,8 +1868,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
-          dismisses_stale_reviews: true,
-          required_approving_review_count: 1,
+          dismisses_stale_reviews: true
         },
       ],
       environments: [
