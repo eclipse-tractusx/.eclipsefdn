@@ -1098,7 +1098,6 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('sldt-digital-twin-registry') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      archived: true,
       delete_branch_on_merge: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
