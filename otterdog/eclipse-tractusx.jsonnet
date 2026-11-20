@@ -277,6 +277,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('aas-suite') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Eclipse Tractus-X Asset Administration Shell Suite [AAS Suite] - An integration between BaSyx & Tractus-X Python SDKs",
