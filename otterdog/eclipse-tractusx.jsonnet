@@ -508,6 +508,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('knowledge-agents') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       description: "Reference Implementations of CX-0084 (Federated Queries In Data Spaces)",
       private_vulnerability_reporting_enabled: true,
@@ -519,6 +520,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('knowledge-agents-aas-bridge') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
@@ -540,6 +542,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('knowledge-agents-edc') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       description: "EDC Extensions for CX-0084 (Federated Queries In Data Spaces)",
       private_vulnerability_reporting_enabled: true,
@@ -598,6 +601,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('managed-service-orchestrator') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
@@ -640,6 +644,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('managed-simple-data-exchanger-backend') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
@@ -661,6 +666,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('managed-simple-data-exchanger-frontend') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
@@ -1091,6 +1097,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('sldt-digital-twin-registry') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
@@ -1177,6 +1184,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('sldt-semantic-hub') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
@@ -1340,6 +1348,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('testdata-provider') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       description: "Testdata Provider",
       private_vulnerability_reporting_enabled: true,
