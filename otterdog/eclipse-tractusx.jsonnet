@@ -1809,11 +1809,6 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       workflows+: {
         default_workflow_permissions: "write",
       },
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          dismisses_stale_reviews: true
-        },
-      ],
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -1838,11 +1833,6 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       workflows+: {
         default_workflow_permissions: "write",
       },
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          dismisses_stale_reviews: true
-        },
-      ],
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -1867,11 +1857,6 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       workflows+: {
         default_workflow_permissions: "write",
       },
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          dismisses_stale_reviews: true
-        },
-      ],
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
