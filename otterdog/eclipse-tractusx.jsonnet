@@ -115,6 +115,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('app-dashboard') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       description: "app-dashboard",
       private_vulnerability_reporting_enabled: true,
@@ -245,6 +246,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('data-exchange-test-service') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
@@ -277,6 +279,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('aas-suite') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Eclipse Tractus-X Asset Administration Shell Suite [AAS Suite] - An integration between BaSyx & Tractus-X Python SDKs",
@@ -508,6 +511,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('knowledge-agents') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       description: "Reference Implementations of CX-0084 (Federated Queries In Data Spaces)",
       private_vulnerability_reporting_enabled: true,
@@ -519,6 +523,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('knowledge-agents-aas-bridge') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
@@ -540,6 +545,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('knowledge-agents-edc') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       description: "EDC Extensions for CX-0084 (Federated Queries In Data Spaces)",
       private_vulnerability_reporting_enabled: true,
@@ -598,6 +604,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('managed-service-orchestrator') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
@@ -640,6 +647,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('managed-simple-data-exchanger-backend') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
@@ -661,6 +669,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('managed-simple-data-exchanger-frontend') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
@@ -754,6 +763,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('portal-assets') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       dependabot_security_updates_enabled: true,
       description: "Portal Documentation and Static Image Content",
       private_vulnerability_reporting_enabled: true,
@@ -827,6 +837,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('portal-frontend-registration') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       dependabot_security_updates_enabled: true,
       description: "Portal Frontend Registration",
       private_vulnerability_reporting_enabled: true,
@@ -956,6 +967,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('sd-factory') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
@@ -1125,6 +1137,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('sldt-discovery-finder') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
@@ -1177,6 +1190,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('sldt-semantic-hub') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
@@ -1265,6 +1279,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('ssi-credential-issuer') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       dependabot_security_updates_enabled: true,
       description: "SSI Credential Issuer",
       private_vulnerability_reporting_enabled: true,
@@ -1340,6 +1355,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('testdata-provider') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       description: "Testdata Provider",
       private_vulnerability_reporting_enabled: true,
@@ -1351,6 +1367,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('tractusx-sdk-services') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Test orchestrator & DT Pull Service - Helps new partners in onboarding",
@@ -1375,6 +1392,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
     orgs.newRepo('traceability-foss') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
@@ -1916,6 +1934,7 @@ orgs.newOrg('automotive.tractusx', 'eclipse-tractusx') {
       aliases: ['tractusx-edc-virtual-connector'],
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Components and services for virtualized control plane",
